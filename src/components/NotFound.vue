@@ -12,7 +12,9 @@ export default {
 
 <style lang="scss" scoped>
 .notfound {
-  font-size: 80px;
+  width: $cont-width;
+  margin: 0 auto;
+  font-size: 56px;
   line-height: 200px;
   text-align: center;
 }
