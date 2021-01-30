@@ -60,3 +60,13 @@ html {
   box-sizing:inherit;
 }
 
+// temp
+.login, .notfound {
+	position: relative;
+	width: 1024px;
+	min-height: 100%;
+	margin: 0 auto;
+	background: $bg-cont;
+	font-size: 30px;
+	text-align: center;
+}
