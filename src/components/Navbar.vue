@@ -19,22 +19,26 @@ export default {
   display: flex;
   justify-content: space-between;
   height: 72px;
-  padding: 0 10px;
+  padding: 0 20px;
   background: #24201d;
-  &__link a {
-    margin-left: 10px;
-    color: #fff;
-    font-size: 20px;
-    line-height: 72px;
-    text-decoration: none;
 
-    &:first-child {
-      margin-left: 0;
-    }
-    &:hover {
-      text-decoration: underline;
+  &__link {
+    a {
+      margin-left: 10px;
+      color: #fff;
+      font-size: 20px;
+      line-height: 72px;
+      text-decoration: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
+
   &__user {
     color: #fff;
     font-size: 20px;
@@ -42,6 +46,7 @@ export default {
     text-align: right;
   }
 }
+
 .highlight {
   color: $highlight;
 }
