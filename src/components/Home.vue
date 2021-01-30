@@ -54,7 +54,9 @@ export default {
       background-color: #000000;
       text-decoration: none;
 
-      &:before {
+      &::before {
+        @include prefixer(transition, all 0.7s ease, webkit spec);
+
         content: '';
         position: absolute;
         top: 0;
@@ -62,6 +64,10 @@ export default {
         width: 100%;
         height: 100%;
         background: rgba(36,32,29,0.7);
+      }
+
+      &:hover::before {
+        background: rgba(36,32,29,1.0);
       }
     }
 

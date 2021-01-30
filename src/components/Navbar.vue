@@ -1,10 +1,10 @@
 <template>
   <div class="navbar">
     <div class="navbar__link">
-      <router-link to="/">Home</router-link>
-      <router-link to="/login">Login</router-link>
+      <router-link to="/">HOME</router-link>
+      <router-link to="/login">LOGIN</router-link>
     </div>
-    <p class="navbar__user">Hi, <strong class="highlight">Guest</strong>!</p>
+    <p class="navbar__user">Hello, <strong class="highlight">guest</strong>!</p>
   </div>
 </template>
 
