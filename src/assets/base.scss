@@ -1,0 +1,62 @@
+// variables
+$font-size-base: 16px !default;
+$font-family-base: 'Noto Sans KR', sans-serif !default;
+$font-color-base: #ffffff !default;
+$font-line-base: 1.6 !default;
+$bg-cont: #000000 !default;
+$highlight: #fba641 !default;
+
+// mixin
+// @include clearfix;
+@mixin clearfix {
+	&::after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+}
+
+// @include prefixer(border-radius, $radii, webkit ms spec);
+@mixin prefixer($property, $value, $prefixers) {
+	@each $prefix in $prefixers {
+		@if $prefix == webkit {
+			-webkit-#{$property}: $value;
+		}
+		@else if $prefix == moz {
+			-moz-#{$property}: $value;
+		}
+		@else if $prefix == ms {
+			-ms-#{$property}: $value;
+		}
+		@else if $prefix == o {
+			-o-#{$property}: $value;
+		}
+		@else if $prefix == spec {
+			#{$property}: $value;
+		}
+	}
+}
+
+// common
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  -webkit-text-size-adjust: none;
+}
+body,div,dl,dt,dd,ul,ol,img,span,menu,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,input,label,button,textarea,blockquote,th,td,p,a,article,aside,hgroup,header,footer,figure,figcaption,nav,section,time,mark,canvas,video,audio,details,summary,option {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $font-color-base;
+  line-height: $font-line-base;
+}
+
+html {
+  box-sizing:border-box;
+}
+*, *:before, *:after {
+  box-sizing:inherit;
+}
+
