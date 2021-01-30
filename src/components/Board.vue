@@ -3,25 +3,32 @@
     <h3 class="board__title">
       Board Page <span>bid: {{ bid }}</span>
     </h3>
-    <div class="board__links">
-      <router-link :to="`/b/${bid}/c/1`">Card 1</router-link>
-      <router-link :to="`/b/${bid}/c/2`">Card 2</router-link>
-      <router-link :to="`/b/${bid}/c/3`">Card 3</router-link>
-    </div>
+    <ul class="board__links">
+      <li v-for="item in data" :key="item.id">
+        <router-link :to="`/b/${bid}/c/${item.id}`">{{ item.title }}</router-link></li>
+    </ul>
+<!--    <div class="board__links">-->
+<!--      <router-link :to="`/b/${bid}/c/1`">Card 1</router-link>-->
+<!--      <router-link :to="`/b/${bid}/c/2`">Card 2</router-link>-->
+<!--      <router-link :to="`/b/${bid}/c/3`">Card 3</router-link>-->
+<!--    </div>-->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import DataJson from '@/assets/data.json'
+
 export default {
   name: 'Board',
   data() {
     return {
-      bid: null
+      bid: null,
+      data: null,
     }
   },
   created() {
-    console.log(this.$route)
+    this.data = DataJson.experience
     this.bid = this.$route.params.bid
   }
 }
@@ -41,6 +48,9 @@ export default {
   &__links {
     padding: 0 0 10px 0;
 
+    li {
+      display: inline-block;
+    }
     a {
       margin: 0 10px;
     }

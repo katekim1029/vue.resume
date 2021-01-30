@@ -1,173 +1,169 @@
-[
-  {
-    "experience": [
-      {
-        "id"		: "1201",
-        "title"	    : "Cyworld TODAY",
-        "src"		: "project_1201.jpg",
-        "client" 	: "SK컴즈",
-        "period" 	: "2011.12 ~ 2012.01",
-        "skills" 	: "HTML / CSS",
-        "details"	: ""
-      }, {
-        "id"		: "1211",
-        "title" 	: "SEOUL ETAX",
-        "src" 	    : "project_1211.jpg",
-        "client" 	: "브레인위버",
-        "period" 	: "2012.11 ~ 2013.02",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: "서울시 ETAX 접근성 프로젝트 / 웹접근성 인증마크 획득"
-      }, {
-        "id"		: "1304",
-        "title" 	: "SKYt SHOPPING",
-        "src" 	    : "project_1304.jpg",
-        "client" 	: "콤마",
-        "period" 	: "2013.04 ~ 2013.07",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: "KTH 홈쇼핑 쇼핑몰 신규구축 / 웹접근성 준수"
-      }, {
-        "id"		: "1306",
-        "title" 	: "PARKJUN Beauty Lab",
-        "src" 	    : "project_1306.jpg",
-        "client" 	: "콤마",
-        "period" 	: "2013.06",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: "패럴랙스 스크롤"
-      }, {
-        "id"		: "1310",
-        "title" 	: "B2ON",
-        "src" 	    : "project_1310.jpg",
-        "client" 	: "비즈니스온",
-        "period" 	: "2013.10",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: ""
-      }, {
-        "id"		: "1311",
-        "title" 	: "DBGS",
-        "src" 	    : "project_1311.jpg",
-        "client" 	: "비즈니스온",
-        "period" 	: "2013.10",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: "반응형웹"
-      }, {
-        "id"		: "1404",
-        "title" 	: "SOLD OUT Event",
-        "src" 	    : "project_1404.jpg",
-        "client" 	: "CJ오쇼핑",
-        "period" 	: "2014.04",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: "이벤트"
-      }, {
-        "id"		: "1405",
-        "title" 	: "Get it beauty SHOP",
-        "src" 	    : "project_1405.jpg",
-        "client" 	: "CJ오쇼핑",
-        "period" 	: "2014.04 ~ 2014.06",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: "CJ오쇼핑 겟잇뷰티샵 쇼핑몰 신규구축"
-      }, {
-        "id"		: "1408",
-        "title" 	: "봉구스 밥버거",
-        "src" 	    : "project_1408.jpg",
-        "client" 	: "아주부플러스",
-        "period" 	: "2014.08",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: ""
-      }, {
-        "id"		: "1503",
-        "title" 	: "샵앤홈 interior",
-        "src" 	    : "project_1503.jpg",
-        "client" 	: "샵앤홈인테리어",
-        "period" 	: "2015.03 ~ 2015.05",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: ""
-      }, {
-        "id"		: "1506",
-        "title" 	: "SAMSUNG CARD 쇼핑",
-        "src" 	    : "project_1506.jpg",
-        "client" 	: "디파이",
-        "period" 	: "2015.06 ~ 2015.07",
-        "skills" 	: "HTML / CSS",
-        "details"	: "퍼블리싱 파트 PA로 모바일 마크업 담당"
-      }, {
-        "id"		: "1508",
-        "title" 	: "직구의 여신",
-        "src" 	    : "project_1508.jpg",
-        "client" 	: "직구닷컴",
-        "period" 	: "2015.8",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: "해외직구 소셜 큐레이션 하이브리드앱"
-      }, {
-        "id"		: "1511",
-        "title" 	: "AD1Shot",
-        "src" 	    : "project_1511.jpg",
-        "client" 	: "위브랩",
-        "period" 	: "2015.11",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: ""
-      }, {
-        "id"		: "1601",
-        "title" 	: "MagazineB",
-        "src" 	    : "project_1601.jpg",
-        "client" 	: "MagazineB",
-        "period" 	: "2016.01",
-        "skills" 	: "HTML / CSS / JQUERY",
-        "details"	: "매거진 하이브리드앱"
-      }, {
-        "id"		: "1603",
-        "title" 	: "주식챔피언스 리그",
-        "src" 	    : "project_1603.jpg",
-        "client" 	: "퓨처위즈",
-        "period" 	: "2016.03 ~ 2016.05",
-        "skills" 	: "HTML / CSS",
-        "details"	: "HTML5 / CSS3"
-      }, {
-        "id"		: "1604",
-        "title" 	: "주식챔피언스 리그",
-        "src" 	    : "project_1604.jpg",
-        "client" 	: "퓨처위즈",
-        "period" 	: "2016.03 ~ 2016.05",
-        "skills" 	: "HTML / CSS",
-        "details"	: "모바일 / HTML5 / CSS3"
-      }
-    ]
-  }, {
-    "skills": [
-      {
-        "id"        : "1",
-        "title"     : "HTML"
-      }, {
-        "id"        : "2",
-        "title"     : "CSS"
-      }, {
-        "id"        : "3",
-        "title"     : "JAVASCRIPT"
-      }, {
-        "id"        : "4",
-        "title"     : "ES6"
-      }, {
-        "id"        : "5",
-        "title"     : "VUE"
-      }, {
-        "id"        : "6",
-        "title"     : "REACT"
-      }
-    ]
-  }, {
-    "education": [
-      {
-        "id"	    : "1",
-        "title"	    : "경희 여자 고등학교",
-        "url"       : "http://kyunghee.sen.hs.kr/index.do"
-      }, {
-        "id"		: "2",
-        "title"	    : "Birkenhead College",
-        "url"       : "https://www.birkenhead.school.nz/"
-      }, {
-        "id"		: "3",
-        "title"	    : "The University of Auckland",
-        "url"       : "https://www.auckland.ac.nz/en.html"
-      }
-    ]
-  }
-]
+{
+  "experience"  : [
+    {
+      "id"		: "1201",
+      "title"	: "Cyworld TODAY",
+      "src"		: "project_1201_rect.jpg",
+      "client" 	: "SK컴즈",
+      "period" 	: "2011.12 ~ 2012.01",
+      "skills" 	: "HTML / CSS",
+      "details"	: ""
+    }, {
+      "id"		: "1211",
+      "title" 	: "SEOUL ETAX",
+      "src" 	: "project_1211_rect.jpg",
+      "client" 	: "브레인위버",
+      "period" 	: "2012.11 ~ 2013.02",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: "서울시 ETAX 접근성 프로젝트 / 웹접근성 인증마크 획득"
+    }, {
+      "id"		: "1304",
+      "title" 	: "SKYt SHOPPING",
+      "src" 	: "project_1304_rect.jpg",
+      "client" 	: "콤마",
+      "period" 	: "2013.04 ~ 2013.07",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: "KTH 홈쇼핑 쇼핑몰 신규구축 / 웹접근성 준수"
+    }, {
+      "id"		: "1306",
+      "title" 	: "PARKJUN Beauty Lab",
+      "src" 	: "project_1306_rect.jpg",
+      "client" 	: "콤마",
+      "period" 	: "2013.06",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: "패럴랙스 스크롤"
+    }, {
+      "id"		: "1310",
+      "title" 	: "B2ON",
+      "src" 	: "project_1310_rect.jpg",
+      "client" 	: "비즈니스온",
+      "period" 	: "2013.10",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: ""
+    }, {
+      "id"		: "1311",
+      "title" 	: "DBGS",
+      "src" 	: "project_1311_rect.jpg",
+      "client" 	: "비즈니스온",
+      "period" 	: "2013.10",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: "반응형웹"
+    }, {
+      "id"		: "1404",
+      "title" 	: "SOLD OUT Event",
+      "src" 	: "project_1404_rect.jpg",
+      "client" 	: "CJ오쇼핑",
+      "period" 	: "2014.04",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: "이벤트"
+    }, {
+      "id"		: "1405",
+      "title" 	: "Get it beauty SHOP",
+      "src" 	: "project_1405_rect.jpg",
+      "client" 	: "CJ오쇼핑",
+      "period" 	: "2014.04 ~ 2014.06",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: "CJ오쇼핑 겟잇뷰티샵 쇼핑몰 신규구축"
+    }, {
+      "id"		: "1408",
+      "title" 	: "봉구스 밥버거",
+      "src" 	: "project_1408_rect.jpg",
+      "client" 	: "아주부플러스",
+      "period" 	: "2014.08",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: ""
+    }, {
+      "id"		: "1503",
+      "title" 	: "샵앤홈 interior",
+      "src" 	: "project_1503_rect.jpg",
+      "client" 	: "샵앤홈인테리어",
+      "period" 	: "2015.03 ~ 2015.05",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: ""
+    }, {
+      "id"		: "1506",
+      "title" 	: "SAMSUNG CARD 쇼핑",
+      "src" 	: "project_1506_rect.jpg",
+      "client" 	: "디파이",
+      "period" 	: "2015.06 ~ 2015.07",
+      "skills" 	: "HTML / CSS",
+      "details"	: "퍼블리싱 파트 PA로 모바일 마크업 담당"
+    }, {
+      "id"		: "1508",
+      "title" 	: "직구의 여신",
+      "src" 	: "project_1508_rect.jpg",
+      "client" 	: "직구닷컴",
+      "period" 	: "2015.8",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: "해외직구 소셜 큐레이션 하이브리드앱"
+    }, {
+      "id"		: "1511",
+      "title" 	: "AD1Shot",
+      "src" 	: "project_1511_rect.jpg",
+      "client" 	: "위브랩",
+      "period" 	: "2015.11",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: ""
+    }, {
+      "id"		: "1601",
+      "title" 	: "MagazineB",
+      "src" 	: "project_1601_rect.jpg",
+      "client" 	: "MagazineB",
+      "period" 	: "2016.01",
+      "skills" 	: "HTML / CSS / JQUERY",
+      "details"	: "매거진 하이브리드앱"
+    }, {
+      "id"		: "1603",
+      "title" 	: "주식챔피언스 리그",
+      "src" 	: "project_1603_rect.jpg",
+      "client" 	: "퓨처위즈",
+      "period" 	: "2016.03 ~ 2016.05",
+      "skills" 	: "HTML / CSS",
+      "details"	: "HTML5 / CSS3"
+    }, {
+      "id"		: "1604",
+      "title" 	: "주식챔피언스 리그",
+      "src"     : "project_1604_rect.jpg",
+      "client" 	: "퓨처위즈",
+      "period" 	: "2016.03 ~ 2016.05",
+      "skills" 	: "HTML / CSS",
+      "details"	: "모바일 / HTML5 / CSS3"
+    }
+  ],
+  "skills"        : [
+    {
+      "id"        : "1",
+      "title"     : "HTML"
+    }, {
+      "id"        : "2",
+      "title"     : "CSS"
+    }, {
+      "id"        : "3",
+      "title"     : "JAVASCRIPT"
+    }, {
+      "id"        : "4",
+      "title"     : "ES6"
+    }, {
+      "id"        : "5",
+      "title"     : "VUE"
+    }, {
+      "id"        : "6",
+      "title"     : "REACT"
+    }
+  ],
+  "education"     : [
+    {
+      "id"	    : "1",
+      "title"	    : "경희 여자 고등학교",
+      "url"       : "http://kyunghee.sen.hs.kr/index.do"
+    }, {
+      "id"		: "2",
+      "title"	    : "Birkenhead College",
+      "url"       : "https://www.birkenhead.school.nz/"
+    }, {
+      "id"		: "3",
+      "title"	    : "The University of Auckland",
+      "url"       : "https://www.auckland.ac.nz/en.html"
+    }
+  ]
+}
