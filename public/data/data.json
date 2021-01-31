@@ -29,7 +29,7 @@
       "img"		: "project_1201_rect.jpg",
       "client" 	: "SK컴즈",
       "period" 	: "2011.12 ~ 2012.01",
-      "skills" 	: "HTML / CSS",
+      "skills" 	: "Html / Css",
       "details"	: "",
       "url"     : ""
     }, {
@@ -38,7 +38,7 @@
       "img" 	: "project_1211_rect.jpg",
       "client" 	: "브레인위버",
       "period" 	: "2012.11 ~ 2013.02",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "서울시 ETAX 접근성 프로젝트 / 웹접근성 인증마크 획득",
       "url"     : ""
     }, {
@@ -47,7 +47,7 @@
       "img" 	: "project_1304_rect.jpg",
       "client" 	: "콤마",
       "period" 	: "2013.04 ~ 2013.07",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "KTH 홈쇼핑 쇼핑몰 신규구축 / 웹접근성 준수",
       "url"     : ""
     }, {
@@ -56,7 +56,7 @@
       "img" 	: "project_1306_rect.jpg",
       "client" 	: "콤마",
       "period" 	: "2013.06",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "패럴랙스 스크롤",
       "url"     : ""
     }, {
@@ -65,7 +65,7 @@
       "img" 	: "project_1310_rect.jpg",
       "client" 	: "비즈니스온",
       "period" 	: "2013.10",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "",
       "url"     : ""
     }, {
@@ -74,7 +74,7 @@
       "img" 	: "project_1311_rect.jpg",
       "client" 	: "비즈니스온",
       "period" 	: "2013.10",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "반응형웹",
       "url"     : ""
     }, {
@@ -83,7 +83,7 @@
       "img" 	: "project_1404_rect.jpg",
       "client" 	: "CJ오쇼핑",
       "period" 	: "2014.04",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "이벤트",
       "url"     : ""
     }, {
@@ -92,7 +92,7 @@
       "img" 	: "project_1405_rect.jpg",
       "client" 	: "CJ오쇼핑",
       "period" 	: "2014.04 ~ 2014.06",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "CJ오쇼핑 겟잇뷰티샵 쇼핑몰 신규구축",
       "url"     : ""
     }, {
@@ -101,7 +101,7 @@
       "img" 	: "project_1408_rect.jpg",
       "client" 	: "아주부플러스",
       "period" 	: "2014.08",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "",
       "url"     : ""
     }, {
@@ -110,7 +110,7 @@
       "img" 	: "project_1503_rect.jpg",
       "client" 	: "샵앤홈인테리어",
       "period" 	: "2015.03 ~ 2015.05",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "",
       "url"     : ""
     }, {
@@ -119,7 +119,7 @@
       "img" 	: "project_1506_rect.jpg",
       "client" 	: "디파이",
       "period" 	: "2015.06 ~ 2015.07",
-      "skills" 	: "HTML / CSS",
+      "skills" 	: "Html / Css",
       "details"	: "퍼블리싱 파트 PA로 모바일 마크업 담당",
       "url"     : ""
     }, {
@@ -128,7 +128,7 @@
       "img" 	: "project_1508_rect.jpg",
       "client" 	: "직구닷컴",
       "period" 	: "2015.8",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "해외직구 소셜 큐레이션 하이브리드앱",
       "url"     : ""
     }, {
@@ -137,7 +137,7 @@
       "img" 	: "project_1511_rect.jpg",
       "client" 	: "위브랩",
       "period" 	: "2015.11",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "",
       "url"     : ""
     }, {
@@ -146,7 +146,7 @@
       "img" 	: "project_1601_rect.jpg",
       "client" 	: "MagazineB",
       "period" 	: "2016.01",
-      "skills" 	: "HTML / CSS / JQUERY",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "매거진 하이브리드앱",
       "url"     : ""
     }, {
@@ -155,8 +155,8 @@
       "img" 	: "project_1603_rect.jpg",
       "client" 	: "퓨처위즈",
       "period" 	: "2016.03 ~ 2016.05",
-      "skills" 	: "HTML / CSS",
-      "details"	: "HTML5 / CSS3",
+      "skills" 	: "Html / Css",
+      "details"	: "Html5 / Css3",
       "url"     : ""
     }, {
       "id"		: "1604",
@@ -164,8 +164,8 @@
       "img"     : "project_1604_rect.jpg",
       "client" 	: "퓨처위즈",
       "period" 	: "2016.03 ~ 2016.05",
-      "skills" 	: "HTML / CSS",
-      "details"	: "모바일 / HTML5 / CSS3",
+      "skills" 	: "Html / Css",
+      "details"	: "모바일 / Html5 / Css3",
       "url"     : ""
     }, {
       "id"		: "1705",
@@ -173,7 +173,7 @@
       "img"     : "project_1705_rect.jpg",
       "client" 	: "29cm",
       "period" 	: "2017.05 ~ 2017.06",
-      "skills" 	: "HTML / CSS / JS",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "Bootstrap / 반응형",
       "url"     : ""
     }, {
@@ -182,7 +182,7 @@
       "img"     : "project_1708_rect.jpg",
       "client" 	: "이노이즈",
       "period" 	: "2017.08 ~ 2017.09",
-      "skills" 	: "HTML / CSS",
+      "skills" 	: "Html / Css",
       "details"	: "하이브리드앱 리뉴얼",
       "url"     : ""
     }, {
@@ -191,8 +191,8 @@
       "img"     : "project_1801_rect.jpg",
       "client" 	: "하이브랩",
       "period" 	: "2018.01 ~ 2018.02",
-      "skills" 	: "HTML / CSS",
-      "details"	: "반응형 / SASS / AEM",
+      "skills" 	: "Html / Css",
+      "details"	: "반응형 / Sass / Aem",
       "url"     : ""
     }, {
       "id"		: "1803",
@@ -200,7 +200,7 @@
       "img"     : "project_1803_rect.jpg",
       "client" 	: "하이브랩",
       "period" 	: "2018.03 ~ 2018.06",
-      "skills" 	: "HTML / CSS",
+      "skills" 	: "Html / Css",
       "details"	: "크로스브라우징 / 접근성",
       "url"     : ""
     }, {
@@ -209,8 +209,8 @@
       "img"     : "project_1901_rect.jpg",
       "client" 	: "웹젠",
       "period" 	: "2019.01 ~ 2019.02",
-      "skills" 	: "HTML / CSS / JS",
-      "details"	: "PC &amp; 모바일 사이트 신규 구축",
+      "skills" 	: "Html / Css / Javascript",
+      "details"	: "PC & 모바일 사이트 신규 구축",
       "url"     : ""
     }, {
       "id"		: "1905",
@@ -218,8 +218,8 @@
       "img"     : "project_1905_rect.jpg",
       "client" 	: "웹젠",
       "period" 	: "2019.05",
-      "skills" 	: "HTML / CSS / JS",
-      "details"	: "Canvas",
+      "skills" 	: "Html / Css / Javascript",
+      "details"	: "Canvas 기반으로 바다 속 물방울 구현",
       "url"     : "http://event.muonline.co.kr/season14part2/preview/"
     }, {
       "id"		: "1907",
@@ -227,71 +227,71 @@
       "img"     : "project_1907_rect.jpg",
       "client" 	: "웹젠",
       "period" 	: "2019.07",
-      "skills" 	: "HTML / CSS / JS",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "One Page Scroll",
       "url"     : ""
     }, {
       "id"		: "1909",
       "title" 	: "R2 13 주년 이벤트",
-      "img"     : "project_1907_rect.jpg",
+      "img"     : "img_soon.jpg",
       "client" 	: "웹젠",
       "period" 	: "2019.09-2019.10",
-      "skills" 	: "HTML / CSS / JS",
-      "details"	: "Vue",
+      "skills" 	: "Html / Css / Javascript",
+      "details"	: "VueJs",
       "url"     : ""
     }, {
       "id"		: "1911",
       "title" 	: "뮤 이그니션 2 커뮤니티",
-      "img"     : "project_1907_rect.jpg",
+      "img"     : "img_soon.jpg",
       "client" 	: "웹젠",
       "period" 	: "2019.11-2019.12",
-      "skills" 	: "HTML / CSS / JS",
-      "details"	: "모바일",
+      "skills" 	: "Html / Css / Javascript",
+      "details"	: "모바일 사이트 신규 구축",
       "url"     : "https://muignition2.webzen.co.kr"
     }, {
       "id"		: "2001",
       "title" 	: "뮤 이그니션 2 CBT 이벤트",
-      "img"     : "project_1907_rect.jpg",
+      "img"     : "img_soon.jpg",
       "client" 	: "웹젠",
       "period" 	: "2001",
-      "skills" 	: "HTML / CSS / JS",
+      "skills" 	: "Html / Css / Javascript",
       "details"	: "One Page Scroll",
       "url"     : "https://muignition2.webzen.co.kr/events/cbt"
     }, {
       "id"		: "2002",
       "title" 	: "R2ward Festival 이벤트",
-      "img"     : "project_1907_rect.jpg",
+      "img"     : "img_soon.jpg",
       "client" 	: "웹젠",
       "period" 	: "2020.02",
-      "skills" 	: "HTML / CSS / JS",
-      "details"	: "Canvas",
+      "skills" 	: "Html / Css / Javascript",
+      "details"	: "Canvas 기반으로 떨어지는 벚꽃 구현",
       "url"     : "https://r2.webzen.co.kr/events/r2wardfestival2020"
     }, {
       "id"		: "2003",
       "title" 	: "게임가이드 템플릿",
-      "img"     : "project_1907_rect.jpg",
+      "img"     : "img_soon.jpg",
       "client" 	: "웹젠",
       "period" 	: "2020.03",
-      "skills" 	: "HTML / CSS / JS",
-      "details"	: "Sass / Gulp / Ejs",
+      "skills" 	: "Html / Css / Javascript",
+      "details"	: "Sass / Bem / Gulp / Ejs",
       "url"     : "https://muarchangel.webzen.co.kr/gameinfo/"
     }, {
       "id"		: "2004",
       "title" 	: "뮤아크엔젤 사전예약",
-      "img"     : "project_1907_rect.jpg",
+      "img"     : "img_soon.jpg",
       "client" 	: "웹젠",
       "period" 	: "2020.04",
-      "skills" 	: "HTML / CSS / JS",
-      "details"	: "모바일",
+      "skills" 	: "Html / Css / Javascript",
+      "details"	: "브랜드 사이트 모바일 작업",
       "url"     : "https://muarchangel.webzen.co.kr/events/game-introduction"
     }, {
       "id"		: "2008",
       "title" 	: "SK C&C 경연 프로그램 구축",
-      "img"     : "project_1907_rect.jpg",
+      "img"     : "img_soon.jpg",
       "client" 	: "비디",
       "period" 	: "2020.08-2020.12",
-      "skills" 	: "HTML / CSS / JS",
-      "details"	: "Vue",
+      "skills" 	: "Html / Css / Javascript",
+      "details"	: "VueJs / Element Ui / Sass / Bem",
       "url"     : ""
     }
   ],
@@ -320,12 +320,12 @@
       "id"      : "6",
       "title"   : "ES6",
       "img"     : "https://t1.daumcdn.net/cfile/tistory/99623E335A17DBD241",
-      "level"   : "초상급"
+      "level"   : "초급"
     }, {
       "id"      : "7",
       "title"   : "VUE",
       "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vue.png/220px-Vue.png",
-      "level"   : "초상급"
+      "level"   : "초급"
     }, {
       "id"      : "8",
       "title"   : "REACT",
@@ -337,14 +337,20 @@
     {
       "id"	    : "1",
       "title"	: "경희 여자 고등학교",
+      "period" 	: "1994.02-1996.04",
+      "status"  : "중퇴",
       "url"     : "http://kyunghee.sen.hs.kr"
     }, {
       "id"		: "2",
       "title"	: "Birkenhead College",
+      "period" 	: "1996.07-1998.11",
+      "status"  : "졸업",
       "url"     : "https://www.birkenhead.school.nz"
     }, {
       "id"		: "3",
       "title"	: "The University of Auckland",
+      "period" 	: "1999.03-2002.09",
+      "status"  : "졸업",
       "url"     : "https://www.auckland.ac.nz"
     }
   ]

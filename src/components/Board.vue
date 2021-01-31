@@ -39,7 +39,7 @@ export default {
       setTimeout(() => {
         board.fetch()
           .then(data => {
-            this.data = data.experience
+            this.data = data.experience.reverse()
           })
           .finally(() => {
             this.loading = false

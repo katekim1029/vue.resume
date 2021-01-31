@@ -14,6 +14,13 @@
           </div>
         </li>
       </ul>
+      <div>
+        인프런 [트렐로 개발로 배우는 Vuejs, Vuex, Vue-Router 프론트엔드 실전 기술] 2020년 수료<br>
+        인프런 [실습 UI 개발로 배워보는 순수 javascript 와 VueJS 개발] 2019년 수료<br>
+        패스트캠퍼스 [React 로 구현하는 웹 애플리케이션 제작 CAMP] 2018년 수료<br>
+        개인 강좌 [EcmaScript2015+] 2018년 수료<br>
+        개인 강좌 [ReactJS Study 기초부터 실전까지] 2018년 수료
+      </div>
     </template>
 
   </div>

@@ -6,8 +6,12 @@
 
     <template v-else>
       <h3 class="info__title">INFO</h3>
+      <div class="info__avatar">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" width="300" height="300">
+      </div>
       <div class="info__text">
-        EMAIL : kate-kim@nate.com
+        EMAIL : <a href="mailto:kate-kim@nate.com">kate-kim@nate.com</a> <br>
+        GITHUB : <a href="https://github.com/katekim1029" target="_blank">https://github.com/katekim1029</a>
       </div>
     </template>
 
@@ -48,8 +52,23 @@ export default {
     line-height: 100px;
   }
 
+  &__avatar {
+    margin-bottom: 20px;
+  }
+
   &__text {
     font-size: 18px;
+    line-height: 30px;
+
+    a {
+      font-size: 18px;
+      font-weight: 200;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 </style>

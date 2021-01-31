@@ -9,6 +9,7 @@
       <ul class="edu__list">
         <li v-for="item in data" :key="item.id">
           <strong>{{ item.title }}</strong>
+          <span>{{ item.period }} {{ item.status }}</span>
           <a :href="item.url" target="_blank">{{ item.url }}</a>
         </li>
       </ul>
@@ -76,11 +77,19 @@ export default {
     strong {
       display: block;
       font-size: 30px;
+      font-weight: 400;
+    }
+
+    span {
+      display: block;
+      font-size: 14px;
+      font-weight: 200;
     }
 
     a {
       color: #939393;
       font-size: 14px;
+      font-weight: 200;
     }
   }
 }
