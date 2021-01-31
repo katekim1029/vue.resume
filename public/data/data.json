@@ -3,18 +3,22 @@
     {
       "id"      : "1",
       "title"   : "info",
+      "path"    : "info",
       "img"     : "https://cdn.pixabay.com/photo/2015/01/11/02/15/mailbox-595854_960_720.jpg"
     }, {
       "id"      : "2",
       "title"   : "skills",
+      "path"    : "skills",
       "img"     : "https://cdn.pixabay.com/photo/2017/01/06/11/01/tool-1957451_960_720.jpg"
     }, {
       "id"      : "3",
       "title"   : "experience",
+      "path"    : "/b/1",
       "img"     : "https://cdn.pixabay.com/photo/2020/07/08/04/12/work-5382501_960_720.jpg"
     }, {
       "id"      : "4",
       "title"   : "education",
+      "path"    : "edu",
       "img"     : "https://cdn.pixabay.com/photo/2016/02/16/21/07/books-1204029_960_720.jpg"
     }
   ],
@@ -295,46 +299,53 @@
     {
       "id"      : "1",
       "title"   : "HTML",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/HTML5_oval_logo.png/220px-HTML5_oval_logo.png"
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/HTML5_oval_logo.png/220px-HTML5_oval_logo.png",
+      "level"   : "상급"
     }, {
       "id"      : "2",
       "title"   : "CSS",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/220px-CSS3_logo_and_wordmark.svg.png"
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/220px-CSS3_logo_and_wordmark.svg.png",
+      "level"   : "상급"
     }, {
       "id"      : "4",
       "title"   : "SASS",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/220px-Sass_Logo_Color.svg.png"
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/220px-Sass_Logo_Color.svg.png",
+      "level"   : "상급"
     }, {
       "id"      : "5",
       "title"   : "JAVASCRIPT",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/140px-Unofficial_JavaScript_logo_2.svg.png"
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/140px-Unofficial_JavaScript_logo_2.svg.png",
+      "level"   : "중급"
     }, {
       "id"      : "6",
       "title"   : "ES6",
-      "img"     : "https://t1.daumcdn.net/cfile/tistory/99623E335A17DBD241"
+      "img"     : "https://t1.daumcdn.net/cfile/tistory/99623E335A17DBD241",
+      "level"   : "초상급"
     }, {
       "id"      : "7",
       "title"   : "VUE",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vue.png/220px-Vue.png"
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vue.png/220px-Vue.png",
+      "level"   : "초상급"
     }, {
       "id"      : "8",
       "title"   : "REACT",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/200px-React-icon.svg.png"
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/200px-React-icon.svg.png",
+      "level"   : "초급"
     }
   ],
   "education"   : [
     {
       "id"	    : "1",
       "title"	: "경희 여자 고등학교",
-      "url"     : "http://kyunghee.sen.hs.kr/index.do"
+      "url"     : "http://kyunghee.sen.hs.kr"
     }, {
       "id"		: "2",
       "title"	: "Birkenhead College",
-      "url"     : "https://www.birkenhead.school.nz/"
+      "url"     : "https://www.birkenhead.school.nz"
     }, {
       "id"		: "3",
       "title"	: "The University of Auckland",
-      "url"     : "https://www.auckland.ac.nz/en.html"
+      "url"     : "https://www.auckland.ac.nz"
     }
   ]
 }

@@ -6,15 +6,11 @@
     </div>
 
     <template v-else>
-      Card Layer
-      <span>cid: {{ cid }}</span>
-      <div>
-        <span> {{ data.title }} </span>
+      <p>
+        <span class="card__title"> {{ data.title }} </span>
         <span v-if="data.url"><a :href="data.url" target="_blank">바로가기</a></span>
-      </div>
-      <div>
-        <img :src="require(`@/assets/images/${ data.img }`)" width="300" height="300">
-      </div>
+      </p>
+      <img :src="require(`@/assets/images/${ data.img }`)" width="400" height="400" class="card__img">
     </template>
 
   </div>
@@ -60,11 +56,20 @@ export default {
 <style lang="scss" scoped>
 .card {
   display: block;
-  margin: 0 auto;
+  margin: 50px auto 0;
   width: 500px;
   height: 500px;
-  border: 2px solid rgba(0,0,0,0.5);
-  font-size: 18px;
+  border: 1px solid #e0e0e0;
   text-align: center;
+
+  &__title {
+    font-size: 36px;
+    line-height: 80px;
+  }
+
+  a {
+    color: #939393;
+    font-size: 14px;
+  }
 }
 </style>

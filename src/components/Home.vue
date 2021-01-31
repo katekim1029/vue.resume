@@ -9,7 +9,7 @@
       <div class="all-boards">
         <ul class="all-boards__list">
           <li v-for="item in boards" :key="item.id" class="all-boards__item" >
-            <router-link :to="`/b/${item.id}`" :style="getBackground(item.id, item.img)">
+            <router-link :to="`${item.path}`" :style="getBackground(item.id, item.img)">
               <em class="text">{{ item.title | capitalize }}</em>
             </router-link>
             <!-- Personal Info | About Me -->

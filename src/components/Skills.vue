@@ -1,32 +1,33 @@
 <template>
-  <div class="board">
-
+  <div class="skills">
     <div class="loading" v-if="loading">
       <span class="loading__bar"></span>
     </div>
 
     <template v-else>
-      <h3 class="board__title">EXPERIENCE</h3>
-      <ul class="board__list">
+      <h3 class="skills__title">SKILLS</h3>
+      <ul class="skills__list">
         <li v-for="item in data" :key="item.id">
-          <router-link :to="`/b/${bid}/c/${item.id}`">{{ item.title }}</router-link></li>
+          <div>
+            <span class="img" :style="{backgroundImage: `url('${item.img}')`}"></span>
+            {{ item.level }}
+          </div>
+        </li>
       </ul>
-      <router-view></router-view>
     </template>
 
   </div>
 </template>
 
 <script>
-import { board } from '@/api'
+import {board} from "@/api";
 
 export default {
-  name: 'Board',
+  name: 'Skills',
   data() {
     return {
       data: null,
       loading: false,
-      bid: null,
     }
   },
   created() {
@@ -39,7 +40,7 @@ export default {
       setTimeout(() => {
         board.fetch()
           .then(data => {
-            this.data = data.experience
+            this.data = data.skills
           })
           .finally(() => {
             this.loading = false
@@ -51,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.board {
+.skills {
   width: $cont-width;
   margin: 0 auto;
   padding-bottom: 100px;
@@ -66,21 +67,29 @@ export default {
   }
 
   &__list {
-    padding: 0 0 10px 0;
-    text-align: left;
+    overflow: hidden;
 
     li {
-      display: inline-block;
-      line-height: 50px;
+      float: left;
+      margin: 10px;
+      width: 300px;
+      height: 270px;
     }
-    a {
-      margin: 0 10px;
-      font-size: 18px;
-      text-decoration: none;
 
-      &:hover {
-        text-decoration: underline;
-      }
+    div {
+      font-size: 30px;
+      line-height: 100px;
+    }
+
+    .img {
+      display: block;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      border: 1px solid #e0e0e0;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: cover;
     }
   }
 }

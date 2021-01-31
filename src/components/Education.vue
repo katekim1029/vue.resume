@@ -1,32 +1,31 @@
 <template>
-  <div class="board">
-
+  <div class="edu">
     <div class="loading" v-if="loading">
       <span class="loading__bar"></span>
     </div>
 
     <template v-else>
-      <h3 class="board__title">EXPERIENCE</h3>
-      <ul class="board__list">
+      <h3 class="edu__title">EDUCATION</h3>
+      <ul class="edu__list">
         <li v-for="item in data" :key="item.id">
-          <router-link :to="`/b/${bid}/c/${item.id}`">{{ item.title }}</router-link></li>
+          <strong>{{ item.title }}</strong>
+          <a :href="item.url" target="_blank">{{ item.url }}</a>
+        </li>
       </ul>
-      <router-view></router-view>
     </template>
 
   </div>
 </template>
 
 <script>
-import { board } from '@/api'
+import {board} from "@/api";
 
 export default {
-  name: 'Board',
+  name: 'Education',
   data() {
     return {
       data: null,
       loading: false,
-      bid: null,
     }
   },
   created() {
@@ -39,7 +38,7 @@ export default {
       setTimeout(() => {
         board.fetch()
           .then(data => {
-            this.data = data.experience
+            this.data = data.education.reverse();
           })
           .finally(() => {
             this.loading = false
@@ -51,7 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.board {
+.edu {
   width: $cont-width;
   margin: 0 auto;
   padding-bottom: 100px;
@@ -66,21 +65,22 @@ export default {
   }
 
   &__list {
-    padding: 0 0 10px 0;
-    text-align: left;
-
     li {
-      display: inline-block;
-      line-height: 50px;
-    }
-    a {
-      margin: 0 10px;
-      font-size: 18px;
-      text-decoration: none;
+      margin-top: 50px;
 
-      &:hover {
-        text-decoration: underline;
+      &:first-child {
+        margin-top: 0;
       }
+    }
+
+    strong {
+      display: block;
+      font-size: 30px;
+    }
+
+    a {
+      color: #939393;
+      font-size: 14px;
     }
   }
 }
