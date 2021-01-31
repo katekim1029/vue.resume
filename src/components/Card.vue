@@ -5,10 +5,13 @@
   <div class="card" v-else>
     Card Layer
     <span>cid: {{ cid }}</span>
-    <ul>
-      <li>{{ data.title }}</li>
-      <li><img :src="require(`@/assets/images/${ data.src }`)" width="300" height="300"></li>
-    </ul>
+    <div>
+      <span> {{ data.title }} </span>
+      <span v-if="data.url"><a :href="data.url" target="_blank">바로가기</a></span>
+    </div>
+    <div>
+      <img :src="require(`@/assets/images/${ data.img }`)" width="300" height="300">
+    </div>
   </div>
 </template>
 

@@ -7,7 +7,8 @@
       "client" 	: "SK컴즈",
       "period" 	: "2011.12 ~ 2012.01",
       "skills" 	: "HTML / CSS",
-      "details"	: ""
+      "details"	: "",
+      "url"     : ""
     }, {
       "id"		: "1211",
       "title" 	: "SEOUL ETAX",
@@ -15,15 +16,17 @@
       "client" 	: "브레인위버",
       "period" 	: "2012.11 ~ 2013.02",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: "서울시 ETAX 접근성 프로젝트 / 웹접근성 인증마크 획득"
+      "details"	: "서울시 ETAX 접근성 프로젝트 / 웹접근성 인증마크 획득",
+      "url"     : ""
     }, {
       "id"		: "1304",
-      "title" 	: "SKYt SHOPPING",
+      "title" 	: "KTH SKY tSHOPPING",
       "src" 	: "project_1304_rect.jpg",
       "client" 	: "콤마",
       "period" 	: "2013.04 ~ 2013.07",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: "KTH 홈쇼핑 쇼핑몰 신규구축 / 웹접근성 준수"
+      "details"	: "KTH 홈쇼핑 쇼핑몰 신규구축 / 웹접근성 준수",
+      "url"     : ""
     }, {
       "id"		: "1306",
       "title" 	: "PARKJUN Beauty Lab",
@@ -31,7 +34,8 @@
       "client" 	: "콤마",
       "period" 	: "2013.06",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: "패럴랙스 스크롤"
+      "details"	: "패럴랙스 스크롤",
+      "url"     : ""
     }, {
       "id"		: "1310",
       "title" 	: "B2ON",
@@ -39,7 +43,8 @@
       "client" 	: "비즈니스온",
       "period" 	: "2013.10",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: ""
+      "details"	: "",
+      "url"     : ""
     }, {
       "id"		: "1311",
       "title" 	: "DBGS",
@@ -47,7 +52,8 @@
       "client" 	: "비즈니스온",
       "period" 	: "2013.10",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: "반응형웹"
+      "details"	: "반응형웹",
+      "url"     : ""
     }, {
       "id"		: "1404",
       "title" 	: "SOLD OUT Event",
@@ -55,7 +61,8 @@
       "client" 	: "CJ오쇼핑",
       "period" 	: "2014.04",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: "이벤트"
+      "details"	: "이벤트",
+      "url"     : ""
     }, {
       "id"		: "1405",
       "title" 	: "Get it beauty SHOP",
@@ -63,7 +70,8 @@
       "client" 	: "CJ오쇼핑",
       "period" 	: "2014.04 ~ 2014.06",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: "CJ오쇼핑 겟잇뷰티샵 쇼핑몰 신규구축"
+      "details"	: "CJ오쇼핑 겟잇뷰티샵 쇼핑몰 신규구축",
+      "url"     : ""
     }, {
       "id"		: "1408",
       "title" 	: "봉구스 밥버거",
@@ -71,7 +79,8 @@
       "client" 	: "아주부플러스",
       "period" 	: "2014.08",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: ""
+      "details"	: "",
+      "url"     : ""
     }, {
       "id"		: "1503",
       "title" 	: "샵앤홈 interior",
@@ -79,7 +88,8 @@
       "client" 	: "샵앤홈인테리어",
       "period" 	: "2015.03 ~ 2015.05",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: ""
+      "details"	: "",
+      "url"     : ""
     }, {
       "id"		: "1506",
       "title" 	: "SAMSUNG CARD 쇼핑",
@@ -87,7 +97,8 @@
       "client" 	: "디파이",
       "period" 	: "2015.06 ~ 2015.07",
       "skills" 	: "HTML / CSS",
-      "details"	: "퍼블리싱 파트 PA로 모바일 마크업 담당"
+      "details"	: "퍼블리싱 파트 PA로 모바일 마크업 담당",
+      "url"     : ""
     }, {
       "id"		: "1508",
       "title" 	: "직구의 여신",
@@ -95,7 +106,8 @@
       "client" 	: "직구닷컴",
       "period" 	: "2015.8",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: "해외직구 소셜 큐레이션 하이브리드앱"
+      "details"	: "해외직구 소셜 큐레이션 하이브리드앱",
+      "url"     : ""
     }, {
       "id"		: "1511",
       "title" 	: "AD1Shot",
@@ -103,7 +115,8 @@
       "client" 	: "위브랩",
       "period" 	: "2015.11",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: ""
+      "details"	: "",
+      "url"     : ""
     }, {
       "id"		: "1601",
       "title" 	: "MagazineB",
@@ -111,7 +124,8 @@
       "client" 	: "MagazineB",
       "period" 	: "2016.01",
       "skills" 	: "HTML / CSS / JQUERY",
-      "details"	: "매거진 하이브리드앱"
+      "details"	: "매거진 하이브리드앱",
+      "url"     : ""
     }, {
       "id"		: "1603",
       "title" 	: "주식챔피언스 리그",
@@ -119,51 +133,189 @@
       "client" 	: "퓨처위즈",
       "period" 	: "2016.03 ~ 2016.05",
       "skills" 	: "HTML / CSS",
-      "details"	: "HTML5 / CSS3"
+      "details"	: "HTML5 / CSS3",
+      "url"     : ""
     }, {
       "id"		: "1604",
       "title" 	: "주식챔피언스 리그",
-      "src"     : "project_1604_rect.jpg",
+      "img"     : "project_1604_rect.jpg",
       "client" 	: "퓨처위즈",
       "period" 	: "2016.03 ~ 2016.05",
       "skills" 	: "HTML / CSS",
-      "details"	: "모바일 / HTML5 / CSS3"
+      "details"	: "모바일 / HTML5 / CSS3",
+      "url"     : ""
+    }, {
+      "id"		: "1705",
+      "title" 	: "29cm 운영",
+      "img"     : "project_1705_rect.jpg",
+      "client" 	: "29cm",
+      "period" 	: "2017.05 ~ 2017.06",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "Bootstrap / 반응형",
+      "url"     : ""
+    }, {
+      "id"		: "1708",
+      "title" 	: "신한카드 판",
+      "img"     : "project_1708_rect.jpg",
+      "client" 	: "이노이즈",
+      "period" 	: "2017.08 ~ 2017.09",
+      "skills" 	: "HTML / CSS",
+      "details"	: "하이브리드앱 리뉴얼",
+      "url"     : ""
+    }, {
+      "id"		: "1801",
+      "title" 	: "삼성 갤럭시S9 플래그쉽",
+      "img"     : "project_1801_rect.jpg",
+      "client" 	: "하이브랩",
+      "period" 	: "2018.01 ~ 2018.02",
+      "skills" 	: "HTML / CSS",
+      "details"	: "반응형 / SASS / AEM",
+      "url"     : ""
+    }, {
+      "id"		: "1803",
+      "title" 	: "11번가 PC운영",
+      "img"     : "project_1803_rect.jpg",
+      "client" 	: "하이브랩",
+      "period" 	: "2018.03 ~ 2018.06",
+      "skills" 	: "HTML / CSS",
+      "details"	: "크로스브라우징 / 접근성",
+      "url"     : ""
+    }, {
+      "id"		: "1901",
+      "title" 	: "마스터탱커 커뮤니티",
+      "img"     : "project_1901_rect.jpg",
+      "client" 	: "웹젠",
+      "period" 	: "2019.01 ~ 2019.02",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "PC &amp; 모바일 사이트 신규 구축",
+      "url"     : ""
+    }, {
+      "id"		: "1905",
+      "title" 	: "뮤 시즌 업데이트",
+      "img"     : "project_1905_rect.jpg",
+      "client" 	: "웹젠",
+      "period" 	: "2019.05",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "Canvas",
+      "url"     : "http://event.muonline.co.kr/season14part2/preview/"
+    }, {
+      "id"		: "1907",
+      "title" 	: "나선영웅전 사전 예약",
+      "img"     : "project_1907_rect.jpg",
+      "client" 	: "웹젠",
+      "period" 	: "2019.07",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "One Page Scroll",
+      "url"     : ""
+    }, {
+      "id"		: "1909",
+      "title" 	: "R2 13 주년 이벤트",
+      "img"     : "project_1907_rect.jpg",
+      "client" 	: "웹젠",
+      "period" 	: "2019.09-2019.10",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "Vue",
+      "url"     : ""
+    }, {
+      "id"		: "1911",
+      "title" 	: "뮤 이그니션 2 커뮤니티",
+      "img"     : "project_1907_rect.jpg",
+      "client" 	: "웹젠",
+      "period" 	: "2019.11-2019.12",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "모바일",
+      "url"     : "https://muignition2.webzen.co.kr"
+    }, {
+      "id"		: "2001",
+      "title" 	: "뮤 이그니션 2 CBT 이벤트",
+      "img"     : "project_1907_rect.jpg",
+      "client" 	: "웹젠",
+      "period" 	: "2001",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "One Page Scroll",
+      "url"     : "https://muignition2.webzen.co.kr/events/cbt"
+    }, {
+      "id"		: "2002",
+      "title" 	: "R2ward Festival 이벤트",
+      "img"     : "project_1907_rect.jpg",
+      "client" 	: "웹젠",
+      "period" 	: "2020.02",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "Canvas",
+      "url"     : "https://r2.webzen.co.kr/events/r2wardfestival2020"
+    }, {
+      "id"		: "2003",
+      "title" 	: "게임가이드 템플릿",
+      "img"     : "project_1907_rect.jpg",
+      "client" 	: "웹젠",
+      "period" 	: "2020.03",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "Sass / Gulp / Ejs",
+      "url"     : "https://muarchangel.webzen.co.kr/gameinfo/"
+    }, {
+      "id"		: "2004",
+      "title" 	: "뮤아크엔젤 사전예약",
+      "img"     : "project_1907_rect.jpg",
+      "client" 	: "웹젠",
+      "period" 	: "2020.04",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "모바일",
+      "url"     : "https://muarchangel.webzen.co.kr/events/game-introduction"
+    }, {
+      "id"		: "2008",
+      "title" 	: "SK C&C 경연 프로그램 구축",
+      "img"     : "project_1907_rect.jpg",
+      "client" 	: "비디",
+      "period" 	: "2020.08-2020.12",
+      "skills" 	: "HTML / CSS / JS",
+      "details"	: "Vue",
+      "url"     : ""
     }
   ],
-  "skills"        : [
+  "skills"      : [
     {
-      "id"        : "1",
-      "title"     : "HTML"
+      "id"      : "1",
+      "title"   : "HTML",
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/HTML5_oval_logo.png/220px-HTML5_oval_logo.png"
     }, {
-      "id"        : "2",
-      "title"     : "CSS"
+      "id"      : "2",
+      "title"   : "CSS",
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/220px-CSS3_logo_and_wordmark.svg.png"
     }, {
-      "id"        : "3",
-      "title"     : "JAVASCRIPT"
+      "id"      : "4",
+      "title"   : "SASS",
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/220px-Sass_Logo_Color.svg.png"
     }, {
-      "id"        : "4",
-      "title"     : "ES6"
+      "id"      : "5",
+      "title"   : "JAVASCRIPT",
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/140px-Unofficial_JavaScript_logo_2.svg.png"
     }, {
-      "id"        : "5",
-      "title"     : "VUE"
+      "id"      : "6",
+      "title"   : "ES6",
+      "img"     : "https://t1.daumcdn.net/cfile/tistory/99623E335A17DBD241"
     }, {
-      "id"        : "6",
-      "title"     : "REACT"
+      "id"      : "7",
+      "title"   : "VUE",
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vue.png/220px-Vue.png"
+    }, {
+      "id"      : "8",
+      "title"   : "REACT",
+      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/200px-React-icon.svg.png"
     }
   ],
-  "education"     : [
+  "education"   : [
     {
       "id"	    : "1",
-      "title"	    : "경희 여자 고등학교",
-      "url"       : "http://kyunghee.sen.hs.kr/index.do"
+      "title"	: "경희 여자 고등학교",
+      "url"     : "http://kyunghee.sen.hs.kr/index.do"
     }, {
       "id"		: "2",
-      "title"	    : "Birkenhead College",
-      "url"       : "https://www.birkenhead.school.nz/"
+      "title"	: "Birkenhead College",
+      "url"     : "https://www.birkenhead.school.nz/"
     }, {
       "id"		: "3",
-      "title"	    : "The University of Auckland",
-      "url"       : "https://www.auckland.ac.nz/en.html"
+      "title"	: "The University of Auckland",
+      "url"     : "https://www.auckland.ac.nz/en.html"
     }
   ]
 }

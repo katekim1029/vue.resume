@@ -28,7 +28,7 @@ export default {
     }
   },
   created() {
-    this.data = DataJson.experience
+    this.data = DataJson.experience.reverse()
     this.bid = this.$route.params.bid
   }
 }
