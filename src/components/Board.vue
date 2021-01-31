@@ -2,7 +2,7 @@
   <div class="board">
 
     <div class="loading" v-if="loading">
-      Loading Board...
+      <span class="loading__bar"></span>
     </div>
 
     <template v-else>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { board } from '@/api'
 
 export default {
   name: 'Board',
@@ -39,17 +39,14 @@ export default {
       this.loading = true
       this.bid = this.$route.params.bid
       setTimeout(() => {
-        axios.get(process.env.BASE_URL+'data/data.json')
-          .then( res => {
-            this.data = res.data.experience
-          })
-          .catch(res => {
-            console.log(res);
+        board.fetch()
+          .then(data => {
+            this.data = data.experience
           })
           .finally(() => {
             this.loading = false
           })
-      }, 500);
+      }, 500)
     }
   }
 }

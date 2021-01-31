@@ -62,5 +62,27 @@ html {
 }
 
 .loading {
-	color: #f63030;
+	position: relative;
+	width: 100%;
+	min-height: 500px;
+
+	&__bar {
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		width: 120px;
+		height: 120px;
+		margin-top: -60px;
+		margin-left: -60px;
+		border: 12px solid rgba(0,0,0,0.07);
+		border-top: 12px solid #89786d;
+		border-radius: 50%;
+		animation: spin 2s linear infinite;
+	}
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }

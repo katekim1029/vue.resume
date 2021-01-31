@@ -2,13 +2,13 @@
   <div class="home">
 
     <div class="loading" v-if="loading">
-      Loading Home...
+      <span class="loading__bar"></span>
     </div>
 
     <template v-else>
       <div class="all-boards">
         <ul class="all-boards__list">
-          <li v-for="item in data" :key="item.id" class="all-boards__item" >
+          <li v-for="item in boards" :key="item.id" class="all-boards__item" >
             <router-link :to="`/b/${item.id}`" :style="getBackground(item.id, item.img)">
               <em class="text">{{ item.title | capitalize }}</em>
             </router-link>
@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { board } from '@/api'
 
 export default {
   name: 'Home',
   data() {
     return {
-      data: null,
+      boards: [],
       loading: false,
     }
   },
@@ -41,17 +41,14 @@ export default {
     fetchData() {
       this.loading = true
       setTimeout(() => {
-        axios.get(process.env.BASE_URL+'data/data.json')
-          .then( res => {
-            this.data = res.data.board
-          })
-          .catch(res => {
-            console.log(res);
+        board.fetch()
+          .then(data => {
+            this.boards = data.boards
           })
           .finally(() => {
             this.loading = false
           })
-      }, 500);
+      }, 1000)
     },
     getBackground(id, img) {
       const bgPos = id === "2" ? "50% 30%" : "50% 50%"
