@@ -1,35 +1,56 @@
 <template>
   <div class="board">
-    <h3 class="board__title">
-      Board Page <span>bid: {{ bid }}</span>
-    </h3>
-    <ul class="board__links">
-      <li v-for="item in data" :key="item.id">
-        <router-link :to="`/b/${bid}/c/${item.id}`">{{ item.title }}</router-link></li>
-    </ul>
-<!--    <div class="board__links">-->
-<!--      <router-link :to="`/b/${bid}/c/1`">Card 1</router-link>-->
-<!--      <router-link :to="`/b/${bid}/c/2`">Card 2</router-link>-->
-<!--      <router-link :to="`/b/${bid}/c/3`">Card 3</router-link>-->
-<!--    </div>-->
-    <router-view></router-view>
+
+    <div class="loading" v-if="loading">
+      Loading Board...
+    </div>
+
+    <template v-else>
+      <h3 class="board__title">
+        Board Page <span>bid: {{ bid }}</span>
+      </h3>
+      <ul class="board__links">
+        <li v-for="item in data" :key="item.id">
+          <router-link :to="`/b/${bid}/c/${item.id}`">{{ item.title }}</router-link></li>
+      </ul>
+      <router-view></router-view>
+    </template>
+
   </div>
 </template>
 
 <script>
-import DataJson from '@/assets/data.json'
+import axios from 'axios'
 
 export default {
   name: 'Board',
   data() {
     return {
-      bid: null,
       data: null,
+      loading: false,
+      bid: null,
     }
   },
   created() {
-    this.data = DataJson.experience.reverse()
-    this.bid = this.$route.params.bid
+    this.fetchData()
+  },
+  methods: {
+    fetchData() {
+      this.loading = true
+      this.bid = this.$route.params.bid
+      setTimeout(() => {
+        axios.get(process.env.BASE_URL+'data/data.json')
+          .then( res => {
+            this.data = res.data.experience
+          })
+          .catch(res => {
+            console.log(res);
+          })
+          .finally(() => {
+            this.loading = false
+          })
+      }, 500);
+    }
   }
 }
 </script>

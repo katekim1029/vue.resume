@@ -1,28 +1,75 @@
 <template>
   <div class="home">
-    <div class="all-boards">
-      <ul class="all-boards__list">
-        <li class="all-boards__item">
-          <router-link to="/b/1" class="info"><em class="text">INFO</em></router-link>
-          <!-- Personal Info | About Me -->
-        </li>
-        <li class="all-boards__item">
-          <router-link to="/b/2" class="skills"><em class="text">SKILLS</em></router-link>
-        </li>
-        <li class="all-boards__item">
-          <router-link to="/b/3" class="exp"><em class="text">EXPERIENCE</em></router-link>
-        </li>
-        <li class="all-boards__item">
-          <router-link to="/b/4" class="edu"><em class="text">EDUCATION</em></router-link>
-        </li>
-      </ul>
+
+    <div class="loading" v-if="loading">
+      Loading Home...
     </div>
+
+    <template v-else>
+      <div class="all-boards">
+        <ul class="all-boards__list">
+          <li v-for="item in data" :key="item.id" class="all-boards__item" >
+            <router-link :to="`/b/${item.id}`" :style="getBackground(item.id, item.img)">
+              <em class="text">{{ item.title | capitalize }}</em>
+            </router-link>
+            <!-- Personal Info | About Me -->
+          </li>
+        </ul>
+      </div>
+    </template>
+
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Home',
+  data() {
+    return {
+      data: null,
+      loading: false,
+    }
+  },
+  created() {
+    console.log("url: " + process.env.BASE_URL)
+    console.log(this.$route)
+    this.fetchData()
+  },
+  methods: {
+    fetchData() {
+      this.loading = true
+      setTimeout(() => {
+        axios.get(process.env.BASE_URL+'data/data.json')
+          .then( res => {
+            this.data = res.data.board
+          })
+          .catch(res => {
+            console.log(res);
+          })
+          .finally(() => {
+            this.loading = false
+          })
+      }, 500);
+    },
+    getBackground(id, img) {
+      const bgPos = id === "2" ? "50% 30%" : "50% 50%"
+      const bgStyle = {
+        "backgroundImage": `url('${img}')`,
+        "backgroundPosition" : `${ bgPos }`,
+        "backgroundSize": "cover"
+      }
+      return bgStyle
+    }
+  },
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.toUpperCase()
+    }
+  }
 }
 </script>
 
@@ -52,6 +99,8 @@ export default {
       width: 100%;
       height: 155px;
       background-color: #000000;
+      background-position: 50%;
+      background-size: cover;
       text-decoration: none;
 
       &::before {
@@ -77,26 +126,6 @@ export default {
       font-size: 36px;
       line-height: 155px;
     }
-  }
-
-  .info {
-    background: url('https://cdn.pixabay.com/photo/2015/01/11/02/15/mailbox-595854_960_720.jpg') no-repeat 50%;
-    background-size: cover;
-  }
-
-  .skills {
-    background: url('https://cdn.pixabay.com/photo/2017/01/06/11/01/tool-1957451_960_720.jpg') no-repeat 50% 30%;
-    background-size: cover;
-  }
-
-  .exp {
-    background: url('https://cdn.pixabay.com/photo/2020/07/08/04/12/work-5382501_960_720.jpg') no-repeat 50%;
-    background-size: cover;
-  }
-
-  .edu {
-    background: url('https://cdn.pixabay.com/photo/2016/02/16/21/07/books-1204029_960_720.jpg') no-repeat 50%;
-    background-size: cover;
   }
 }
 </style>

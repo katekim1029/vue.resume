@@ -1,30 +1,35 @@
 <template>
-  <div class="loading" v-if="loading">
-    Loading Card...
-  </div>
-  <div class="card" v-else>
-    Card Layer
-    <span>cid: {{ cid }}</span>
-    <div>
-      <span> {{ data.title }} </span>
-      <span v-if="data.url"><a :href="data.url" target="_blank">바로가기</a></span>
+  <div class="card" >
+
+    <div class="loading" v-if="loading">
+      Loading Card...
     </div>
-    <div>
-      <img :src="require(`@/assets/images/${ data.img }`)" width="300" height="300">
-    </div>
+
+    <template v-else>
+      Card Layer
+      <span>cid: {{ cid }}</span>
+      <div>
+        <span> {{ data.title }} </span>
+        <span v-if="data.url"><a :href="data.url" target="_blank">바로가기</a></span>
+      </div>
+      <div>
+        <img :src="require(`@/assets/images/${ data.img }`)" width="300" height="300">
+      </div>
+    </template>
+
   </div>
 </template>
 
 <script>
-import DataJson from '@/assets/data.json'
+import axios from 'axios'
 
 export default {
   name: 'Card',
   data() {
     return {
-      cid: null,
-      loading: false,
       data: null,
+      loading: false,
+      cid: null,
     }
   },
   watch: {
@@ -35,11 +40,20 @@ export default {
   },
   methods: {
     fetchData() {
+      this.cid = this.$route.params.cid
       this.loading = true
       setTimeout( () => {
-        this.cid = this.$route.params.cid
-        this.data = DataJson.experience.find( elem => elem.id === this.cid)
-        this.loading = false
+        axios.get(process.env.BASE_URL+'data/data.json')
+          .then( res => {
+            this.data = res.data.experience.find( elem => elem.id === this.cid)
+            console.log(this.data)
+          })
+          .catch(res => {
+            console.log(res);
+          })
+          .finally(() => {
+            this.loading = false
+          })
       }, 500)
     }
   }

@@ -10,5 +10,8 @@ module.exports = {
         additionalData: `@import "@/assets/base.scss";`
       },
     }
-  }
+  },
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/resume/'
+    : '/'
 }

@@ -2,8 +2,7 @@
   <div class="navbar">
     <div class="navbar__link">
       <router-link to="/">HOME</router-link>
-<!--      <router-link to="/login">LOGIN</router-link>-->
-      <a href="#" @click="handleLogout">LOGOUT</a>
+      <router-link to="/login">LOGIN</router-link>
     </div>
     <p class="navbar__user">Hello, <strong class="highlight">guest</strong>!</p>
   </div>
@@ -12,13 +11,6 @@
 <script>
 export default {
   name: 'Navbar',
-  methods: {
-    handleLogout(e) {
-      e.preventDefault();
-      let routeData = this.$router.resolve({name: "goodbye", query: {user: "guest"}});
-      window.open(routeData.href, "_blank", "width=640,height=427");
-    }
-  }
 }
 </script>
 
