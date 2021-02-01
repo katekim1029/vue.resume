@@ -94,6 +94,7 @@ export default {
       width: 150px;
       height: 150px;
       margin: 0 auto;
+      font: 0/0 Arial;
 
       &::after {
         content: '';

@@ -78,6 +78,7 @@ export default {
     a {
       position: relative;
       display: block;
+      font: 0/0 Arial;
 
       &::after {
         content: '';
@@ -88,7 +89,16 @@ export default {
         width: 100%;
         height: 100%;
         border: 1px solid #e0e0e0;
+        @include prefixer(transition, all 0.7s ease, webkit spec);
       }
+
+      &:hover::after {
+        border: 2px solid #89786d;
+      }
+    }
+
+    img {
+      display: block;
     }
 
   }
