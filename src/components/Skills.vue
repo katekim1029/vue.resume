@@ -9,7 +9,7 @@
       <ul class="skills__list">
         <li v-for="item in data" :key="item.id">
           <div>
-            <span class="img" :style="{backgroundImage: `url('${item.img}')`}"></span>
+            <span class="img"><img :src="require(`@/assets/images/${ item.img }`)" width="150" height="150"></span>
             {{ item.level }}
           </div>
         </li>
@@ -89,14 +89,22 @@ export default {
     }
 
     .img {
+      position: relative;
       display: block;
       width: 150px;
       height: 150px;
       margin: 0 auto;
-      border: 1px solid #e0e0e0;
-      background-repeat: no-repeat;
-      background-position: 50%;
-      background-size: cover;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #e0e0e0;
+      }
     }
   }
 }

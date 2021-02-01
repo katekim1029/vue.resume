@@ -233,7 +233,7 @@
     }, {
       "id"		: "1909",
       "title" 	: "R2 13 주년 이벤트",
-      "img"     : "img_soon.jpg",
+      "img"     : "project_1909_rect.jpg",
       "client" 	: "웹젠",
       "period" 	: "2019.09-2019.10",
       "skills" 	: "Html / Css / Javascript",
@@ -242,7 +242,7 @@
     }, {
       "id"		: "1911",
       "title" 	: "뮤 이그니션 2 커뮤니티",
-      "img"     : "img_soon.jpg",
+      "img"     : "project_1911_rect.jpg",
       "client" 	: "웹젠",
       "period" 	: "2019.11-2019.12",
       "skills" 	: "Html / Css / Javascript",
@@ -251,7 +251,7 @@
     }, {
       "id"		: "2001",
       "title" 	: "뮤 이그니션 2 CBT 이벤트",
-      "img"     : "img_soon.jpg",
+      "img"     : "project_2001_rect.jpg",
       "client" 	: "웹젠",
       "period" 	: "2001",
       "skills" 	: "Html / Css / Javascript",
@@ -260,7 +260,7 @@
     }, {
       "id"		: "2002",
       "title" 	: "R2ward Festival 이벤트",
-      "img"     : "img_soon.jpg",
+      "img"     : "project_2002_rect.jpg",
       "client" 	: "웹젠",
       "period" 	: "2020.02",
       "skills" 	: "Html / Css / Javascript",
@@ -269,7 +269,7 @@
     }, {
       "id"		: "2003",
       "title" 	: "게임가이드 템플릿",
-      "img"     : "img_soon.jpg",
+      "img"     : "project_2003_rect.jpg",
       "client" 	: "웹젠",
       "period" 	: "2020.03",
       "skills" 	: "Html / Css / Javascript",
@@ -278,7 +278,7 @@
     }, {
       "id"		: "2004",
       "title" 	: "뮤아크엔젤 사전예약",
-      "img"     : "img_soon.jpg",
+      "img"     : "project_2004_rect.jpg",
       "client" 	: "웹젠",
       "period" 	: "2020.04",
       "skills" 	: "Html / Css / Javascript",
@@ -299,37 +299,37 @@
     {
       "id"      : "1",
       "title"   : "HTML",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/HTML5_oval_logo.png/220px-HTML5_oval_logo.png",
+      "img"     : "img_html.png",
       "level"   : "상급"
     }, {
       "id"      : "2",
       "title"   : "CSS",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/220px-CSS3_logo_and_wordmark.svg.png",
+      "img"     : "img_css.png",
       "level"   : "상급"
     }, {
       "id"      : "4",
       "title"   : "SASS",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/220px-Sass_Logo_Color.svg.png",
+      "img"     : "img_sass.png",
       "level"   : "상급"
     }, {
       "id"      : "5",
       "title"   : "JAVASCRIPT",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/140px-Unofficial_JavaScript_logo_2.svg.png",
+      "img"     : "img_javascript.png",
       "level"   : "중급"
     }, {
       "id"      : "6",
       "title"   : "ES6",
-      "img"     : "https://t1.daumcdn.net/cfile/tistory/99623E335A17DBD241",
+      "img"     : "img_es6.png",
       "level"   : "초급"
     }, {
       "id"      : "7",
       "title"   : "VUE",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vue.png/220px-Vue.png",
+      "img"     : "img_vue.png",
       "level"   : "초급"
     }, {
       "id"      : "8",
       "title"   : "REACT",
-      "img"     : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/200px-React-icon.svg.png",
+      "img"     : "img_react.png",
       "level"   : "초급"
     }
   ],

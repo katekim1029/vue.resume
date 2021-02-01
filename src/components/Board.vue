@@ -9,7 +9,7 @@
       <h3 class="board__title">EXPERIENCE</h3>
       <ul class="board__list">
         <li v-for="item in data" :key="item.id">
-          <router-link :to="`/b/${bid}/c/${item.id}`">{{ item.title }}</router-link></li>
+          <router-link :to="`/b/${bid}/c/${item.id}`"><img :src="require(`@/assets/images/${ item.img }`)" width="100" height="100"></router-link></li>
       </ul>
       <router-view></router-view>
     </template>
@@ -71,17 +71,26 @@ export default {
 
     li {
       display: inline-block;
-      line-height: 50px;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
     }
     a {
-      margin: 0 10px;
-      font-size: 18px;
-      text-decoration: none;
+      position: relative;
+      display: block;
 
-      &:hover {
-        text-decoration: underline;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #e0e0e0;
       }
     }
+
   }
 }
 </style>

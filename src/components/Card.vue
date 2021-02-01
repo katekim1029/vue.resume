@@ -14,7 +14,7 @@
             <li>CLIENT : {{ data. client }}</li>
             <li>PERIOD : {{ data. period }}</li>
             <li>SKILLS : {{ data. skills }}</li>
-            <li v-if="data.detail">DETAILS : {{ data. details }}</li>
+            <li v-if="data.details">DETAILS : {{ data. details }}</li>
             <li v-if="data.url">LINK : <a :href="data.url" target="_blank">{{ data.url }}</a></li>
           </ul>
         </div>
