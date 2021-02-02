@@ -13,13 +13,9 @@ import Education from '@/components/Education.vue'
 Vue.use(VueRouter)
 
 const requireAuth = (to, from, next) => {
-  console.dir(to)
-  console.dir(from)
   const isAuth = localStorage.getItem('token')
   const loginPath = `/login?rPath=${encodeURIComponent(to.path)}`
-  console.log(isAuth, loginPath)
-  //isAuth ? next() : next(loginPath)
-  next()
+  isAuth ? next() : next(loginPath)
 }
 
 const router = new VueRouter({

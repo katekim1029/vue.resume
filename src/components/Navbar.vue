@@ -4,13 +4,25 @@
       <router-link class="navbar__link" to="/">HOME</router-link>
       <router-link class="navbar__link" to="/login">LOGIN</router-link>
     </div>
-    <p class="navbar__text">Hello, <strong class="navbar__user">guest</strong>!</p>
+    <p class="navbar__text" v-if="name">Hello, <strong class="navbar__user">{{ name }}</strong>!</p>
   </div>
 </template>
 
 <script>
+import { bus } from '@/utils/bus'
+
 export default {
   name: 'Navbar',
+  data() {
+    return {
+      name: null
+    }
+  },
+  created() {
+    bus.$on('name', (name) => {
+      this.name = name
+    })
+  }
 }
 </script>
 

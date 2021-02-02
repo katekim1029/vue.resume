@@ -45,9 +45,9 @@ export default {
       this.cid = this.$route.params.cid
       this.loading = true
       setTimeout( () => {
-        board.fetch()
+        board.fetch('experience')
           .then(data => {
-            this.data = data.experience.find( elem => elem.id === this.cid)
+            this.data = data.find( elem => elem.id === this.cid)
             console.log(this.data)
           })
           .finally(() => {

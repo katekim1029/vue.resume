@@ -39,9 +39,9 @@ export default {
     fetchData() {
       this.loading = true
       setTimeout(() => {
-        board.fetch()
+        board.fetch('boards')
           .then(data => {
-            this.boards = data.boards
+            this.boards = data
           })
           .finally(() => {
             this.loading = false

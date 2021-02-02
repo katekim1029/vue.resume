@@ -7,12 +7,12 @@ const onUnauthorized = () => {
   router.push('/login')
 }
 
-const request = (method, url, data) => {
+const request = (method, obj, data) => {
   return axios({
     method,
     url: DOMAIN + 'data/data.json',
     data
-  }).then(result => result.data)
+  }).then((result) => result.data[obj])
     .catch(result => {
       const {status} = result.response
       if(status === UNAUTHORIZED) return onUnauthorized()
@@ -21,7 +21,21 @@ const request = (method, url, data) => {
 }
 
 export const board = {
-  fetch() {
-    return request('get')
+  fetch(obj) {
+    return request('get', obj)
+  }
+}
+
+export const auth = {
+  login(name, password) {
+    return request('get', 'login',  {name, password})
+      .then(data => new Promise((resolve, reject) => {
+        if(data['password'] === password){
+          resolve(data);
+        }
+        else{
+          reject('Password is 1111');
+        }
+      }))
   }
 }

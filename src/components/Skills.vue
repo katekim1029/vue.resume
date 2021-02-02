@@ -49,9 +49,9 @@ export default {
       this.loading = true
       this.bid = this.$route.params.bid
       setTimeout(() => {
-        board.fetch()
+        board.fetch('skills')
           .then(data => {
-            this.data = data.skills
+            this.data = data
           })
           .finally(() => {
             this.loading = false

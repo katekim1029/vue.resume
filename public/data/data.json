@@ -1,4 +1,8 @@
 {
+  "login"       : {
+    "name"      : "guest",
+    "password"  : "1111"
+  },
   "boards"       : [
     {
       "id"      : "1",

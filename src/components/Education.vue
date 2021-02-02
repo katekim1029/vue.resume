@@ -38,9 +38,9 @@ export default {
       this.loading = true
       this.bid = this.$route.params.bid
       setTimeout(() => {
-        board.fetch()
+        board.fetch('education')
           .then(data => {
-            this.data = data.education.reverse();
+            this.data = data.reverse();
           })
           .finally(() => {
             this.loading = false

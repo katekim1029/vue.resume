@@ -84,6 +84,36 @@ html {
   box-sizing:inherit;
 }
 
+input {
+	-webkit-appearance: none;
+	border-radius: 0;
+	border: none;
+}
+input::-ms-clear,
+input::-ms-reveal {
+	display: none;
+	width : 0;
+	height: 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input::placeholder {
+	color: $gray-100;
+}
+input::-webkit-input-placeholder {
+	color: $gray-100;
+}
+
+.error {
+	color : $danger;
+	font-size: $font-size-sm;
+	font-weight: $font-weight-light;
+	text-align: left;
+}
+
 .loading {
 	position: relative;
 	width: 100%;
