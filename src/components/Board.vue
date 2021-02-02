@@ -66,8 +66,7 @@ export default {
   }
 
   &__list {
-    padding: 0 0 10px 0;
-    text-align: left;
+    text-align: center;
 
     li {
       display: inline-block;

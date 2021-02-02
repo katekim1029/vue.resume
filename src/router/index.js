@@ -12,18 +12,27 @@ import Education from '@/components/Education.vue'
 
 Vue.use(VueRouter)
 
+const requireAuth = (to, from, next) => {
+  console.dir(to)
+  console.dir(from)
+  const isAuth = localStorage.getItem('token')
+  const loginPath = `/login?rPath=${encodeURIComponent(to.path)}`
+  console.log('isAuth ' + isAuth)
+  isAuth ? next() : next(loginPath)
+}
+
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes : [
-    { path: '/', component: Home },
+    { path: '/', component: Home, beforeEnter: requireAuth },
     { path: '/login', component: Login },
-    { path: '/b/:bid', component: Board, children: [
-        { path: 'c/:cid', component: Card }
+    { path: '/b/:bid', component: Board, beforeEnter: requireAuth, children: [
+        { path: 'c/:cid', component: Card, beforeEnter: requireAuth }
       ] },
-    { path: '/info', component: Info },
-    { path: '/skills', component: Skills },
-    { path: '/edu', component: Education },
+    { path: '/info', component: Info, beforeEnter: requireAuth },
+    { path: '/skills', component: Skills, beforeEnter: requireAuth },
+    { path: '/edu', component: Education, beforeEnter: requireAuth },
     { path: '*', component: NotFound }
   ]
 })
