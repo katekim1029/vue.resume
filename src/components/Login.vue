@@ -1,22 +1,26 @@
 <template>
   <div class="cont">
-    <h3 class="title">Login</h3>
+    <template v-if="!isLogin">
+      <h3 class="title">Login</h3>
 
-    <div class="login">
-      <form @submit.prevent="onSubmit">
-        <div class="login__box">
-          <label for="name" class="login__lb">Name</label>
-          <input type="text" id="name" class="login__inp" placeholder="Enter your name" v-model="name" autofocus>
-        </div>
-        <div class="login__box">
-          <label for="password" class="login__lb">Password</label>
-          <input type="password" id="password" class="login__inp" placeholder="Enter 1111" v-model="password">
-        </div>
-        <p class="login__error"><span class="error" v-if="error">{{ error }}</span></p>
-        <button class="login__btn" type="submit" :class="{'is-valid': !invalidForm}" :disabled="invalidForm">LOG IN</button>
-      </form>
+      <div class="login">
+        <form @submit.prevent="onSubmit">
+          <div class="login__box">
+            <label for="name" class="login__lb">Name</label>
+            <input type="text" id="name" class="login__inp" maxlength="30" placeholder="Enter your name" v-model="name" autofocus>
+          </div>
+          <div class="login__box">
+            <label for="password" class="login__lb">Password</label>
+            <input type="password" id="password" class="login__inp" placeholder="Enter 1111" v-model="password">
+          </div>
+          <p class="login__error"><span class="error" v-if="error">{{ error }}</span></p>
+          <button class="login__btn" type="submit" :class="{'is-valid': !invalidForm}" :disabled="invalidForm">LOG IN</button>
+        </form>
 
-    </div>
+      </div>
+    </template>
+
+    <div class="message" v-else>잘못된 경로입니다!</div>
   </div>
 </template>
 
@@ -31,16 +35,22 @@ export default {
       name: '',
       password: '',
       error: '',
-      rPath: ''
+      rPath: '',
+      isLogin: false
     }
+  },
+  created() {
+    this.rPath = this.$route.query.rPath || '/'
+
+    this.isLogin = !!localStorage.getItem('token')
+    bus.$on('name', (name) => {
+      this.isLogin = !!name
+    })
   },
   computed: {
     invalidForm() {
       return !this.name || !this.password
     }
-  },
-  created() {
-    this.rPath = this.$route.query.rPath || ''
   },
   methods: {
     onSubmit() {
@@ -49,7 +59,7 @@ export default {
         .then(() => {
           localStorage.setItem('token', this.name)
           bus.$emit('name', this.name)
-          this.$router.push(this.rPath).catch(()=>{});
+          this.$router.push(this.rPath).catch(()=>{})
         })
         .catch(err => {
           this.error = err

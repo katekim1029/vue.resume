@@ -1,6 +1,6 @@
 <template>
   <div class="cont">
-    <h3 class="title">Page not found</h3>
+    <div class="message">Page not found</div>
   </div>
 </template>
 
