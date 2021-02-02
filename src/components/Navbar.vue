@@ -27,7 +27,7 @@ export default {
     this.isLogin = !!this.name
     bus.$on('name', (name) => {
       this.name = name
-      this.isLogin = !this.name
+      this.isLogin = !!this.name
     })
   },
   methods: {
