@@ -1,6 +1,6 @@
 <template>
-  <div class="login">
-    Login Page
+  <div class="cont">
+    <h3 class="title">Login Page</h3>
   </div>
 </template>
 
@@ -11,11 +11,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.login {
-  width: $cont-width;
-  margin: 0 auto;
-  font-size: 56px;
-  line-height: 200px;
-  text-align: center;
-}
 </style>

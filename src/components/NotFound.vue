@@ -1,6 +1,6 @@
 <template>
-  <div class="notfound">
-    Page not found
+  <div class="cont">
+    <h3 class="title">Page not found</h3>
   </div>
 </template>
 
@@ -11,11 +11,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.notfound {
-  width: $cont-width;
-  margin: 0 auto;
-  font-size: 56px;
-  line-height: 200px;
-  text-align: center;
-}
 </style>

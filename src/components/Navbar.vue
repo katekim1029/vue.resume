@@ -1,10 +1,10 @@
 <template>
   <div class="navbar">
-    <div class="navbar__link">
-      <router-link to="/">HOME</router-link>
-      <router-link to="/login">LOGIN</router-link>
+    <div class="navbar__list">
+      <router-link class="navbar__link" to="/">HOME</router-link>
+      <router-link class="navbar__link" to="/login">LOGIN</router-link>
     </div>
-    <p class="navbar__user">Hello, <strong class="highlight">guest</strong>!</p>
+    <p class="navbar__text">Hello, <strong class="navbar__user">guest</strong>!</p>
   </div>
 </template>
 
@@ -20,34 +20,32 @@ export default {
   justify-content: space-between;
   height: 72px;
   padding: 0 20px;
-  background: #24201d;
+  background: $color-300;
 
   &__link {
-    a {
-      margin-left: 10px;
-      color: #fff;
-      font-size: 20px;
-      line-height: 72px;
-      text-decoration: none;
+    margin-left: 10px;
+    color: $white;
+    font-size: $font-size-lg;
+    line-height: 72px;
+    text-decoration: none;
 
-      &:first-child {
-        margin-left: 0;
-      }
-      &:hover {
-        text-decoration: underline;
-      }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:hover {
+      text-decoration: underline;
     }
   }
 
-  &__user {
-    color: #fff;
-    font-size: 20px;
+  &__text {
+    color: $white;
+    font-size: $font-size-lg;
     line-height: 72px;
     text-align: right;
   }
-}
 
-.highlight {
-  color: $highlight;
+  &__user {
+    color: $primary;
+  }
 }
 </style>

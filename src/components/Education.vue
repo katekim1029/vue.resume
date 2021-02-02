@@ -1,20 +1,21 @@
 <template>
-  <div class="edu">
+  <div class="cont">
     <div class="loading" v-if="loading">
       <span class="loading__bar"></span>
     </div>
 
     <template v-else>
-      <h3 class="edu__title">EDUCATION</h3>
-      <ul class="edu__list">
-        <li v-for="item in data" :key="item.id">
-          <strong>{{ item.title }}</strong>
-          <span>{{ item.period }} {{ item.status }}</span>
-          <a :href="item.url" target="_blank">{{ item.url }}</a>
-        </li>
-      </ul>
+      <h3 class="title">EDUCATION</h3>
+      <div class="edu">
+        <ul class="edu__list">
+          <li class="edu__item" v-for="item in data" :key="item.id">
+            <strong>{{ item.title }}</strong>
+            <i>{{ item.period }} {{ item.status }}</i>
+            <a :href="item.url" class="edu__link" target="_blank">{{ item.url }}</a>
+          </li>
+        </ul>
+      </div>
     </template>
-
   </div>
 </template>
 
@@ -57,40 +58,30 @@ export default {
   padding-bottom: 100px;
   text-align: center;
 
-  &__title {
-    padding-top: 30px;
-    padding-bottom: 23px;
-    font-size: 56px;
-    font-weight: bold;
-    line-height: 100px;
-  }
+  &__item {
+    margin-top: 50px;
 
-  &__list {
-    li {
-      margin-top: 50px;
-
-      &:first-child {
-        margin-top: 0;
-      }
+    &:first-child {
+      margin-top: 0;
     }
 
     strong {
       display: block;
-      font-size: 30px;
-      font-weight: 400;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-regular;
     }
 
-    span {
+    i {
       display: block;
-      font-size: 14px;
-      font-weight: 200;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-light;
     }
+  }
 
-    a {
-      color: #939393;
-      font-size: 14px;
-      font-weight: 200;
-    }
+  &__link {
+    color: $gray-100;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-light;
   }
 }
 </style>

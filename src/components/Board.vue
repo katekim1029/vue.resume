@@ -1,19 +1,23 @@
 <template>
-  <div class="board">
-
+  <div class="cont">
     <div class="loading" v-if="loading">
       <span class="loading__bar"></span>
     </div>
 
     <template v-else>
-      <h3 class="board__title">EXPERIENCE</h3>
-      <ul class="board__list">
-        <li v-for="item in data" :key="item.id">
-          <router-link :to="`/b/${bid}/c/${item.id}`"><img :src="require(`@/assets/images/${ item.img }`)" width="100" height="100"></router-link></li>
-      </ul>
+      <h3 class="title">EXPERIENCE</h3>
+      <div class="board">
+        <ul class="board__list">
+          <li class="board__item" v-for="item in data" :key="item.id">
+            <router-link class="board__link" :to="`/b/${bid}/c/${item.id}`">
+              <img :src="require(`@/assets/images/${ item.img }`)" width="100" height="100" alt="">
+            </router-link>
+          </li>
+        </ul>
+      </div>
+
       <router-view></router-view>
     </template>
-
   </div>
 </template>
 
@@ -52,54 +56,42 @@ export default {
 
 <style lang="scss" scoped>
 .board {
-  width: $cont-width;
-  margin: 0 auto;
-  padding-bottom: 100px;
-  text-align: center;
-
-  &__title {
-    padding-top: 30px;
-    padding-bottom: 23px;
-    font-size: 56px;
-    font-weight: bold;
-    line-height: 100px;
-  }
-
   &__list {
     text-align: center;
+  }
 
-    li {
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-      margin: 10px;
-    }
-    a {
-      position: relative;
+  &__item {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    font: 0/0 Arial;
+
+    &::after {
+      @include prefixer(transition, all 0.7s ease, webkit spec);
+
+      content: '';
       display: block;
-      font: 0/0 Arial;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $color-border;
+    }
 
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 1px solid #e0e0e0;
-        @include prefixer(transition, all 0.7s ease, webkit spec);
-      }
-
-      &:hover::after {
-        border: 2px solid #89786d;
-      }
+    &:hover::after {
+      border: 2px solid $color-100;
     }
 
     img {
       display: block;
     }
-
   }
 }
 </style>

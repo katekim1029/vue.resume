@@ -1,11 +1,34 @@
 // variables
+
+$primary: #fba641 !default;
+$success: #015df5 !default;
+$danger: #f63030 !default;
+
+$white: #fff !default;
+$black: #000 !default;
+$gray-100: #939393 !default;
+$gray-200: #696969 !default;
+$gray-300: #292929 !default;
+$color-100: #89786d !default;
+$color-200: #6b5e56 !default;
+$color-300: #24201d !default;
+$color-border: #e0e0e0 !default;
+
+$font-weight-light: 200 !default;
+$font-weight-regular: 400 !default;
+$font-weight-bold: 700 !default;
+
+$font-size-xl: 36px !default;
+$font-size-lg: 18px !default;
 $font-size-base: 16px !default;
+$font-size-sm: 14px !default;
+
 $font-family-base: 'Noto Sans KR', sans-serif !default;
 $font-color-base: #292929 !default;
 $font-line-base: 1.6 !default;
-$cont-bg: #ffffff !default;
+
+$cont-bg: #fff !default;
 $cont-width: 1280px !default;
-$highlight: #fba641 !default;
 
 // mixin
 // @include clearfix;
@@ -76,7 +99,7 @@ html {
 		margin-top: -60px;
 		margin-left: -60px;
 		border: 12px solid rgba(0,0,0,0.07);
-		border-top: 12px solid #89786d;
+		border-top: 12px solid $color-100;
 		border-radius: 50%;
 		animation: spin 2s linear infinite;
 	}
@@ -85,4 +108,23 @@ html {
 @keyframes spin {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
+}
+
+.cont {
+	width: $cont-width;
+	margin: 0 auto;
+	padding-bottom: 100px;
+	text-align: center;
+
+	&.home {
+		padding-bottom: 0;
+	}
+}
+
+.title {
+	padding-top: 30px;
+	padding-bottom: 23px;
+	font-size: 56px;
+	font-weight: $font-weight-bold;
+	line-height: 100px;
 }

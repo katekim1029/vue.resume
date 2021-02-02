@@ -1,27 +1,24 @@
 <template>
   <div class="card">
-
     <div class="loading" v-if="loading">
       <span class="loading__bar"></span>
     </div>
 
     <template v-else>
       <div class="card__info">
-        <img :src="require(`@/assets/images/${ data.img }`)" width="400" height="400" class="card__img">
+        <img :src="require(`@/assets/images/${ data.img }`)" class="card__img" width="400" height="400" alt="">
         <div class="card__detail">
-          <strong class="card__title">{{ data.title }}</strong>
-          <ul>
-            <li>CLIENT : {{ data. client }}</li>
-            <li>PERIOD : {{ data. period }}</li>
-            <li>SKILLS : {{ data. skills }}</li>
-            <li v-if="data.details">DETAILS : {{ data. details }}</li>
-            <li v-if="data.url">LINK : <a :href="data.url" target="_blank">{{ data.url }}</a></li>
+          <h5 class="card__title">{{ data.title }}</h5>
+          <ul class="card__list">
+            <li class="card__item">CLIENT : {{ data. client }}</li>
+            <li class="card__item">PERIOD : {{ data. period }}</li>
+            <li class="card__item">SKILLS : {{ data. skills }}</li>
+            <li class="card__item" v-if="data.details">DETAILS : {{ data. details }}</li>
+            <li class="card__item" v-if="data.url">LINK : <a :href="data.url" class="card__link" target="_blank">{{ data.url }}</a></li>
           </ul>
         </div>
-
       </div>
     </template>
-
   </div>
 </template>
 
@@ -70,7 +67,7 @@ export default {
   margin: 50px auto 0;
   width: 1000px;
   height: 500px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid $color-border;
   text-align: center;
 
   &__info {
@@ -79,7 +76,8 @@ export default {
   }
 
   &__title {
-    font-size: 36px;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-regular;
     line-height: 80px;
   }
 
@@ -87,25 +85,24 @@ export default {
     position: absolute;
     top: 50px;
     left: 50px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid $color-border;
   }
 
   &__detail {
     float: left;
     padding-top: 50px;
     text-align: left;
-
-    li {
-      font-size: 18px;
-      line-height: 40px;
-    }
-
-    a {
-      color: #939393;
-      font-size: 14px;
-      font-weight: 200;
-    }
   }
 
+  &__item {
+    font-size: $font-size-lg;
+    line-height: 40px;
+  }
+
+  &__link {
+    color: $gray-100;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-light;
+  }
 }
 </style>
