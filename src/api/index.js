@@ -39,6 +39,13 @@ const requestFake = (method, url, data) => {
     })
 }
 
+export const boardFake = {
+  fetch(id) {
+    const url = 'https://jsonplaceholder.typicode.com/posts'
+    return id ? requestFake('get', `${url}/${id}`) : requestFake('get', url)
+  }
+}
+
 export const authFake = {
   login(email, password) {
     return requestFake('post', 'https://reqres.in/api/login', {email, password})

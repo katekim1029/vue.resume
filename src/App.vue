@@ -2,14 +2,32 @@
   <div id="app">
     <Navbar />
     <router-view></router-view>
+    <router-link class="btn-fake" to="/posts" v-if="isFakeBtn">F</router-link>
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
+
 export default {
   name: 'App',
-  components: { Navbar }
+  components: { Navbar },
+  data() {
+    return {
+      isFakeBtn: true
+    }
+  },
+  watch: {
+    '$route': {
+      handler: 'handleFakeBtn',
+      immediate: true
+    }
+  },
+  methods: {
+    handleFakeBtn() {
+      this.isFakeBtn = (this.$route.path === '/')
+    }
+  }
 }
 </script>
 

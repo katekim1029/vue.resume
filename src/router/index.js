@@ -10,6 +10,9 @@ import Info from '@/components/Info.vue'
 import Skills from '@/components/Skills.vue'
 import Education from '@/components/Education.vue'
 
+import PostList from '@/components/PostList.vue'
+import PostView from '@/components/PostView1.vue'
+
 Vue.use(VueRouter)
 
 const requireAuth = (to, from, next) => {
@@ -30,6 +33,8 @@ const router = new VueRouter({
     { path: '/info', component: Info, beforeEnter: requireAuth },
     { path: '/skills', component: Skills, beforeEnter: requireAuth },
     { path: '/edu', component: Education, beforeEnter: requireAuth },
+    { path: '/posts', component: PostList, beforeEnter: requireAuth },
+    { path: '/posts/:pid', component: PostView, beforeEnter: requireAuth },
     { path: '*', component: NotFound }
   ]
 })

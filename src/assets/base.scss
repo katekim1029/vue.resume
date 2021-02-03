@@ -40,6 +40,16 @@ $cont-width: 1280px !default;
 	}
 }
 
+// @include ellipsis;
+@mixin ellipsis($width: 100%) {
+	display: inline-block;
+	max-width: $width;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+}
+
 // @include prefixer(border-radius, $radii, webkit ms spec);
 @mixin prefixer($property, $value, $prefixers) {
 	@each $prefix in $prefixers {
@@ -165,4 +175,21 @@ input::-webkit-input-placeholder {
 	font-size: 56px;
 	font-weight: $font-weight-bold;
 	line-height: 100px;
+}
+
+.btn-fake {
+	position: fixed;
+	left: 50%;
+	bottom: 10px;
+	display: block;
+	width: 80px;
+	height: 80px;
+	margin-left: 550px;
+	background: $color-300;
+	border-radius: 50%;
+	color: $white;
+	font-size: $font-size-xl;
+	text-align: center;
+	text-decoration: none;
+	line-height: 80px;
 }
