@@ -7,14 +7,9 @@
     <template v-else>
       <h3 class="title">Fake Board</h3>
 
-      <div class="posts">
-        <ul v-for="post in board" :key="post.id" class="posts__list">
-          <li class="posts__item">
-            <router-link class="posts__link" :to="`/posts/${post.id}`">
-              {{ post.id }}. {{ post.title }}
-            </router-link>
-          </li>
-        </ul>
+      <div class="post">
+        <strong class="post__tit">{{ data.title }}</strong>
+        <p class="post__cnt">{{ data.body }}</p>
       </div>
     </template>
   </div>
@@ -24,23 +19,27 @@
 import { boardFake } from  '@/api'
 
 export default {
-  name: 'PostList',
+  name: 'PostView',
   data() {
     return {
+      data: null,
       loading: false,
-      board: '',
-      error: ''
+      pid: null,
     }
   },
-  created() {
-    this.fetchData()
+  watch: {
+    '$route': {
+      handler: 'fetchData',
+      immediate: true
+    }
   },
   methods: {
     fetchData() {
       this.loading = true
-      boardFake.fetch()
+      this.pid = this.$route.params.pid
+      boardFake.fetch(this.pid)
         .then(data => {
-          this.board = data
+          this.data = data
         })
         .finally(() => {
           this.loading = false
@@ -51,22 +50,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.posts {
-  &__list {
-    width: 700px;
-    margin: 0 auto;
-  }
-  &__item {
-    @include ellipsis;
-  }
-  &__link {
-    font-size: $font-size-lg;
-    font-weight: $font-weight-light;
-    text-decoration: none;
+.post {
+  width: 700px;
+  margin: 0 auto;
 
-    &:hover {
-      text-decoration: underline;
-    }
+  &__tit {
+    display: block;
+    font-weight: $font-weight-light;
+    font-size: $font-size-xl;
+    line-height: 1.1;
+  }
+
+  &__cnt {
+    padding-top: 30px;
+    color: $gray-100;
+    font-weight: $font-weight-light;
+    font-size: $font-size-lg;
   }
 }
 </style>

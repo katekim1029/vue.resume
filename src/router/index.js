@@ -11,7 +11,7 @@ import Skills from '@/components/Skills.vue'
 import Education from '@/components/Education.vue'
 
 import PostList from '@/components/PostList.vue'
-import PostView from '@/components/PostView1.vue'
+import PostView from '@/components/PostView.vue'
 
 Vue.use(VueRouter)
 
