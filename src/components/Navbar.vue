@@ -2,39 +2,27 @@
   <div class="navbar">
     <div class="navbar__list">
       <router-link class="navbar__link" to="/">HOME</router-link>
-      <a href="#" class="navbar__link" @click.prevent="logout" v-if="isLogin">LOGOUT</a>
+      <a href="#" class="navbar__link" @click.prevent="logout" v-if="isAuth">LOGOUT</a>
       <router-link class="navbar__link" to="/login" v-else>LOGIN</router-link>
     </div>
-    <p class="navbar__text" v-if="isLogin">
-      Hello, <strong class="navbar__user">{{ name }}</strong>!
-    </p>
+<!--        <p class="navbar__text">-->
+<!--          Hello, <strong class="navbar__user"></strong>!-->
+<!--        </p>-->
   </div>
 </template>
 
 <script>
-import { bus } from '@/utils/bus'
-
 export default {
-  name: 'Navbar',
-  data() {
-    return {
-      name: null,
-      isLogin: false
+  name: 'FakeNavbar',
+  computed: {
+    isAuth() {
+      return !!localStorage.getItem('token')
     }
-  },
-  created() {
-    this.name = localStorage.getItem('token')
-    this.isLogin = !!this.name
-    bus.$on('name', (name) => {
-      this.name = name
-      this.isLogin = !!this.name
-    })
   },
   methods: {
     logout() {
       delete localStorage.token
       this.$router.push('/login').catch(()=>{})
-      bus.$emit('name', null)
     }
   }
 }

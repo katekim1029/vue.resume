@@ -26,20 +26,6 @@ export const board = {
   }
 }
 
-export const auth = {
-  login(name, password) {
-    return request('get', 'login',  {name, password})
-      .then(data => new Promise((resolve, reject) => {
-        if(data['password'] === password){
-          resolve(data);
-        }
-        else{
-          reject('Password is 1111');
-        }
-      }))
-  }
-}
-
 const requestFake = (method, url, data) => {
   return axios({
     method,

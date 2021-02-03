@@ -1,68 +1,57 @@
 <template>
   <div class="cont">
-    <template v-if="!isLogin">
-      <h3 class="title">Login</h3>
 
-      <div class="login">
-        <form @submit.prevent="onSubmit">
-          <div class="login__box">
-            <label for="name" class="login__lb">Name</label>
-            <input type="text" id="name" class="login__inp" maxlength="30" placeholder="Enter your name" v-model="name" autofocus>
-          </div>
-          <div class="login__box">
-            <label for="password" class="login__lb">Password</label>
-            <input type="password" id="password" class="login__inp" placeholder="Enter 1111" v-model="password">
-          </div>
-          <p class="login__error"><span class="error" v-if="error">{{ error }}</span></p>
-          <button class="login__btn" type="submit" :class="{'is-valid': !invalidForm}" :disabled="invalidForm">LOG IN</button>
-        </form>
+    <h3 class="title">Fake Login</h3>
 
-      </div>
-    </template>
-
-    <div class="message" v-else>잘못된 경로입니다!</div>
+    <div class="login">
+      <form @submit.prevent="onSubmit">
+        <div class="login__box">
+          <label for="email" class="login__lb">Email</label>
+          <input type="text" id="email" class="login__inp" maxlength="100" placeholder="Enter email" v-model="email" autofocus>
+          <p class="login__text">eve.holt@reqres.in</p>
+        </div>
+        <div class="login__box">
+          <label for="password" class="login__lb">Password</label>
+          <input type="password" id="password" class="login__inp" placeholder="Enter password" v-model="password">
+          <p class="login__text">cityslicka</p>
+        </div>
+        <p class="login__error"><span class="error" v-if="error">{{ error }}</span></p>
+        <button class="login__btn" type="submit" :class="{'is-valid': !invalidForm}" :disabled="invalidForm">LOG IN</button>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
-import { auth } from '@/api'
-import { bus } from '@/utils/bus'
+import { authFake } from '@/api'
 
 export default {
   name: 'Login',
   data() {
     return {
-      name: '',
+      email: '',
       password: '',
       error: '',
-      rPath: '',
-      isLogin: false
+      rPath: ''
     }
   },
   created() {
     this.rPath = this.$route.query.rPath || '/'
-
-    this.isLogin = !!localStorage.getItem('token')
-    bus.$on('name', (name) => {
-      this.isLogin = !!name
-    })
   },
   computed: {
     invalidForm() {
-      return !this.name || !this.password
+      return !this.email || !this.password
     }
   },
   methods: {
     onSubmit() {
-      console.log(this.name, this.password)
-      auth.login(this.name, this.password)
-        .then(() => {
-          localStorage.setItem('token', this.name)
-          bus.$emit('name', this.name)
+      authFake.login(this.email, this.password)
+        .then(data => {
+          localStorage.setItem('token', data.token)
           this.$router.push(this.rPath).catch(()=>{})
         })
         .catch(err => {
-          this.error = err
+          this.error = err.data.error
         })
     }
   }
@@ -86,7 +75,6 @@ export default {
   }
   &__error {
     height: 20px;
-    margin-top: -10px;
     text-align: left;
   }
   &__btn {
@@ -107,6 +95,13 @@ export default {
       background: $color-100;
       color: $white;
     }
+  }
+  &__text {
+    margin-top: -5px;
+    color: $gray-100;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-light;
+    text-align: left;
   }
 }
 </style>
