@@ -39,3 +39,22 @@ export const auth = {
       }))
   }
 }
+
+const requestFake = (method, url, data) => {
+  return axios({
+    method,
+    url,
+    data
+  }).then(result => result.data)
+    .catch(result => {
+      const {status} = result.response
+      if (status === UNAUTHORIZED) onUnauthorized()
+      throw result.response
+    })
+}
+
+export const authFake = {
+  login(email, password) {
+    return requestFake('post', 'https://reqres.in/api/login', {email, password})
+  }
+}
