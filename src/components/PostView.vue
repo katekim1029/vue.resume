@@ -7,10 +7,12 @@
     <template v-else>
       <h3 class="title">Fake Board</h3>
 
-      <div class="post">
-        <strong class="post__tit">{{ data.title }}</strong>
-        <p class="post__cnt">{{ data.body }}</p>
+      <div class="post-view">
+        <strong class="post-view__tit">{{ data.title }}</strong>
+        <p class="post-view__cnt">{{ data.body }}</p>
       </div>
+
+      <router-link class="btn-board" to="/posts">LIST</router-link>
     </template>
   </div>
 </template>
@@ -50,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.post {
+.post-view {
   width: 700px;
   margin: 0 auto;
 

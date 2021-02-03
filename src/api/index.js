@@ -43,6 +43,10 @@ export const boardFake = {
   fetch(id) {
     const url = 'https://jsonplaceholder.typicode.com/posts'
     return id ? requestFake('get', `${url}/${id}`) : requestFake('get', url)
+  },
+  create(payload) {
+    const url = 'https://jsonplaceholder.typicode.com/posts'
+    return requestFake('post', url, payload)
   }
 }
 

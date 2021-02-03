@@ -1,36 +1,46 @@
 <template>
-  <div class="card">
-    <div class="loading" v-if="loading">
-      <span class="loading__bar"></span>
-    </div>
-
-    <template v-else>
-      <div class="card__info">
-        <img :src="require(`@/assets/images/${ data.img }`)" class="card__img" width="400" height="400" alt="">
-        <div class="card__detail">
-          <h5 class="card__title">{{ data.title }}</h5>
-          <ul class="card__list">
-            <li class="card__item">CLIENT : {{ data. client }}</li>
-            <li class="card__item">PERIOD : {{ data. period }}</li>
-            <li class="card__item">SKILLS : {{ data. skills }}</li>
-            <li class="card__item" v-if="data.details">DETAILS : {{ data. details }}</li>
-            <li class="card__item" v-if="data.url">LINK : <a :href="data.url" class="card__link" target="_blank">{{ data.url }}</a></li>
-          </ul>
+  <Modal class="modal-card">
+    <div slot="body" class="card">
+      <div>
+        <div class="loading" v-if="loading">
+          <span class="loading__bar"></span>
         </div>
+
+        <template v-else>
+          <button class="btn-modal" @click.prevent="close">&times;</button>
+          <div class="card__info">
+            <img :src="require(`@/assets/images/${ data.img }`)" class="card__img" width="400" height="400" alt="">
+            <div class="card__detail">
+              <h5 class="card__title">{{ data.title }}</h5>
+              <ul class="card__list">
+                <li class="card__item">CLIENT : {{ data. client }}</li>
+                <li class="card__item">PERIOD : {{ data. period }}</li>
+                <li class="card__item">SKILLS : {{ data. skills }}</li>
+                <li class="card__item" v-if="data.details">DETAILS : {{ data. details }}</li>
+                <li class="card__item" v-if="data.url">LINK : <a :href="data.url" class="card__link" target="_blank">{{ data.url }}</a></li>
+              </ul>
+            </div>
+          </div>
+        </template>
       </div>
-    </template>
-  </div>
+    </div>
+  </Modal>
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue'
 import { board } from '@/api'
 
 export default {
   name: 'Card',
+  components: {
+    Modal
+  },
   data() {
     return {
       data: null,
       loading: false,
+      bid: null,
       cid: null,
     }
   },
@@ -42,6 +52,7 @@ export default {
   },
   methods: {
     fetchData() {
+      this.bid = this.$route.params.bid
       this.cid = this.$route.params.cid
       this.loading = true
       setTimeout( () => {
@@ -54,7 +65,10 @@ export default {
             this.loading = false
           })
         }, 500)
-    }
+    },
+    close() {
+      this.$router.push(`/b/${this.bid}`).catch(()=>{})
+    },
   }
 }
 </script>

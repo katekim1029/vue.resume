@@ -7,14 +7,15 @@
     <template v-else>
       <h3 class="title">Fake Board</h3>
 
-      <div class="posts">
-        <ul v-for="post in board" :key="post.id" class="posts__list">
-          <li class="posts__item">
-            <router-link class="posts__link" :to="`/posts/${post.id}`">
+      <div class="post-list">
+        <ul v-for="post in board" :key="post.id" class="post-list__box">
+          <li class="post-list__item">
+            <router-link class="post-list__link" :to="`/posts/${post.id}`">
               {{ post.id }}. {{ post.title }}
             </router-link>
           </li>
         </ul>
+        <router-link class="btn-board" to="/write">WRITE</router-link>
       </div>
     </template>
   </div>
@@ -51,8 +52,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.posts {
-  &__list {
+.post-list {
+  &__box {
     width: 700px;
     margin: 0 auto;
   }

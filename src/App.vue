@@ -11,7 +11,9 @@ import Navbar from '@/components/Navbar.vue'
 
 export default {
   name: 'App',
-  components: { Navbar },
+  components: {
+    Navbar
+  },
   data() {
     return {
       isFakeBtn: true
@@ -39,5 +41,22 @@ export default {
   min-height: 100%;
   margin: 0 auto;
   background: $cont-bg;
+}
+
+.btn-fake {
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin-left: 550px;
+  background: $color-300;
+  border-radius: 50%;
+  color: $white;
+  font-size: $font-size-xl;
+  text-align: center;
+  text-decoration: none;
+  line-height: 80px;
 }
 </style>
