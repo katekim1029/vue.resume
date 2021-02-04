@@ -11,8 +11,8 @@
       </div>
 
       <div class="btnset">
-        <button type="button" class="btn-cancel" @click="cancel">CANCEL</button>
-        <button type="submit" class="btn-board" :disabled="valid">POST</button>
+        <button type="button" class="btn-cancel" @click="cancel">취소</button>
+        <button type="submit" class="btn-board" :disabled="valid">등록</button>
       </div>
     </form>
 

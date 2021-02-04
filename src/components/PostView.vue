@@ -12,7 +12,7 @@
         <p class="post-view__cnt">{{ data.body }}</p>
       </div>
 
-      <router-link class="btn-board" to="/posts">LIST</router-link>
+      <router-link class="btn-board" to="/posts">목록</router-link>
     </template>
   </div>
 </template>
