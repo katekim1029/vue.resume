@@ -43,7 +43,7 @@
         <button type="button" class="btn-board" @click="SET_IS_WRITE_POST(true)">글쓰기</button>
 
         <PostView v-if="isViewPost" :pid="postId" />
-        <PostWrite v-if="isWritePost" />
+        <PostWrite v-if="isWritePost" @submit="onWritePost" />
       </div>
     </template>
   </div>
@@ -111,6 +111,9 @@ export default {
     onViewPost(pid) {
       this.postId = pid
       this.SET_IS_VIEW_POST(true)
+    },
+    onWritePost() {
+      this.page = 1
     }
   }
 }

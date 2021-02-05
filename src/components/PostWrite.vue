@@ -60,9 +60,11 @@ export default {
       'FETCH_POSTS'
     ]),
     onSubmit() {
-      this.SET_IS_WRITE_POST(false)
       this.ADD_POST({title: this.input, body: this.textarea, userId: 1}).then(() => {
+        alert('등록되었습니다!')
         this.FETCH_POSTS()
+        this.SET_IS_WRITE_POST(false)
+        this.$emit('submit')
       })
     }
   }
