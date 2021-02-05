@@ -26,7 +26,7 @@
             <tr v-for="post in board" :key="post.id" >
               <td>{{ post.id }}</td>
               <td class="post-list__text">
-                <a href="#" class="post-list__link" @click.prevent="openViewModal(post.id)">
+                <a href="#" class="post-list__link" @click.prevent="onViewPost(post.id)">
                   {{ post.title }}
                 </a>
               </td>
@@ -40,19 +40,20 @@
           <strong>{{ page }}</strong> / {{ count }} 페이지
           <button type="button" :disabled="page === count" @click="next" class="post-list__btn">다음</button>
         </div>
-        <button type="button" class="btn-board" @click="writeModal=true">글쓰기</button>
+        <button type="button" class="btn-board" @click="SET_IS_WRITE_POST(true)">글쓰기</button>
 
-        <PostView v-if="viewModal" :data="postData" @close="viewModal=false" />
-        <PostWrite v-if="writeModal" @close="writeModal=false" @submit="onWritePost" />
+        <PostView v-if="isViewPost" :pid="postId" />
+        <PostWrite v-if="isWritePost" @submit="onWritePost" />
       </div>
     </template>
   </div>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
+import { boardFake } from  '@/api'
 import PostView from '@/components/PostView.vue'
 import PostWrite from '@/components/PostWrite.vue'
-import { boardFake } from  '@/api'
 
 export default {
   name: 'PostList',
@@ -67,15 +68,17 @@ export default {
       error: '',
       page: 1,
       size: 10,
-      viewModal: false,
-      writeModal: false,
-      postData: {},
+      postId: null,
     }
   },
   created() {
     this.fetchData()
   },
   computed: {
+    ...mapState([
+      'isViewPost',
+      'isWritePost'
+    ]),
     count() {
       const total = this.data.length;
       return Math.ceil(total / this.size)
@@ -87,6 +90,10 @@ export default {
     },
   },
   methods: {
+    ...mapMutations([
+      'SET_IS_VIEW_POST',
+      'SET_IS_WRITE_POST',
+    ]),
     fetchData() {
       this.loading = true
       boardFake.fetch()
@@ -103,22 +110,12 @@ export default {
     next() {
       this.page += 1
     },
-    onWritePost(payload) {
-      boardFake.create(payload)
-        .then(() => {
-          this.fetchData()
-        })
+    onWritePost() {
+      this.fetchData()
     },
-    openViewModal(id) {
-      this.loading = true
-      boardFake.fetch(id)
-        .then(data => {
-          this.postData = data
-        })
-        .finally(() => {
-          this.loading = false
-          this.viewModal = true
-        })
+    onViewPost(pid) {
+      this.postId = pid
+      this.SET_IS_VIEW_POST(true)
     }
   }
 }

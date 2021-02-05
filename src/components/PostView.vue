@@ -1,17 +1,26 @@
 <template>
-  <Modal class="modal-view">
+  <Modal class="modal-view" :class="{ 'is-loading': loading }">
+
     <div slot="body">
-      <div class="post-view">
-        <strong class="post-view__tit">{{ data.title }}</strong>
-        <p class="post-view__cnt">{{ data.body }}</p>
+
+      <div class="loading" v-if="loading">
+        <span class="loading__bar"></span>
       </div>
 
-      <button class="btn-modal" @click="close">&times;</button>
+      <template v-else>
+        <div class="post-view">
+          <strong class="post-view__tit">{{ post.title }}</strong>
+          <p class="post-view__cnt">{{ post.body }}</p>
+        </div>
+
+        <button class="btn-modal" @click="SET_IS_VIEW_POST(false)">&times;</button>
+      </template>
     </div>
   </Modal>
 </template>
 
 <script>
+import { mapState, mapMutations, mapActions } from 'vuex'
 import Modal from '@/components/Modal.vue'
 
 export default {
@@ -19,12 +28,25 @@ export default {
   components: {
     Modal
   },
-  props: ['data'],
-  methods: {
-    close() {
-      this.$emit('close')
+  props: ['pid'],
+  data() {
+    return {
+      loading: true,
     }
-  }
+  },
+  computed: {
+    ...mapState(['post'])
+  },
+  methods: {
+    ...mapMutations(['SET_IS_VIEW_POST']),
+    ...mapActions(['FETCH_VIEW_POST'])
+  },
+  created() {
+    this.FETCH_VIEW_POST(this.pid)
+      .finally(() => {
+        this.loading = false
+      })
+  },
 }
 </script>
 
@@ -39,11 +61,16 @@ export default {
     font-family: $font-family-base;
     transition: all 0s ease 0s;
   }
+
   .modal-body {
     margin: 0;
   }
   .modal-header, .modal-footer {
     display: none;
+  }
+
+  .loading {
+    min-height: 100px;
   }
 }
 

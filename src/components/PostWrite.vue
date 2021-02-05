@@ -12,18 +12,19 @@
         </div>
 
         <div class="btnset">
-          <button type="button" class="btn-cancel" @click="close">취소</button>
+          <button type="button" class="btn-cancel" @click="SET_IS_WRITE_POST(false)">취소</button>
           <button type="submit" class="btn-board" :disabled="valid">등록</button>
         </div>
       </form>
 
-      <button class="btn-modal" @click="close">&times;</button>
+      <button class="btn-modal" @click="SET_IS_WRITE_POST(false)">&times;</button>
     </div>
 
   </Modal>
 </template>
 
 <script>
+import { mapMutations, mapActions } from 'vuex'
 import Modal from '@/components/Modal.vue'
 
 export default {
@@ -51,12 +52,12 @@ export default {
     }
   },
   methods: {
-    close() {
-      this.$emit('close')
-    },
+    ...mapMutations(['SET_IS_WRITE_POST']),
+    ...mapActions(['ADD_POST']),
     onSubmit() {
-      this.$emit('close')
-      this.$emit('submit', {title: this.input, body: this.textarea, userId: 1})
+      this.ADD_POST({title: this.input, body: this.textarea, userId: 1})
+      this.SET_IS_WRITE_POST(false)
+      this.$emit('submit')
     }
   }
 }
