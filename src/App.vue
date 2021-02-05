@@ -2,7 +2,7 @@
   <div id="app">
     <Navbar />
     <router-view></router-view>
-    <router-link class="btn-fake" to="/posts" v-if="isFakeBtn">B</router-link>
+    <router-link class="btn-fake" to="/posts" v-if="isFakeBtn">F</router-link>
   </div>
 </template>
 

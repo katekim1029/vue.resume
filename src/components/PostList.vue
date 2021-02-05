@@ -23,14 +23,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="post in board" :key="post.id" >
-              <td>{{ post.id }}</td>
+            <tr v-for="item in board" :key="item.id" >
+              <td>{{ item.id }}</td>
               <td class="post-list__text">
-                <a href="#" class="post-list__link" @click.prevent="onViewPost(post.id)">
-                  {{ post.title }}
+                <a href="#" class="post-list__link" @click.prevent="onViewPost(item.id)">
+                  {{ item.title }}
                 </a>
               </td>
-              <td>{{ post.userId }}</td>
+              <td>{{ item.userId }}</td>
             </tr>
           </tbody>
         </table>
@@ -43,15 +43,14 @@
         <button type="button" class="btn-board" @click="SET_IS_WRITE_POST(true)">글쓰기</button>
 
         <PostView v-if="isViewPost" :pid="postId" />
-        <PostWrite v-if="isWritePost" @submit="onWritePost" />
+        <PostWrite v-if="isWritePost" />
       </div>
     </template>
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
-import { boardFake } from  '@/api'
+import { mapState, mapMutations, mapActions } from 'vuex'
 import PostView from '@/components/PostView.vue'
 import PostWrite from '@/components/PostWrite.vue'
 
@@ -64,7 +63,6 @@ export default {
   data() {
     return {
       loading: false,
-      data: '',
       error: '',
       page: 1,
       size: 10,
@@ -77,16 +75,17 @@ export default {
   computed: {
     ...mapState([
       'isViewPost',
-      'isWritePost'
+      'isWritePost',
+      'posts'
     ]),
     count() {
-      const total = this.data.length;
+      const total = this.posts.length;
       return Math.ceil(total / this.size)
     },
     board() {
       const start = (this.page - 1) * this.size
       const end = start + this.size
-      return this.data.slice(start, end)
+      return this.posts.slice(start, end)
     },
   },
   methods: {
@@ -94,24 +93,20 @@ export default {
       'SET_IS_VIEW_POST',
       'SET_IS_WRITE_POST',
     ]),
+    ...mapActions([
+      'FETCH_POSTS'
+    ]),
     fetchData() {
       this.loading = true
-      boardFake.fetch()
-        .then(data => {
-          this.data = data
-        })
-        .finally(() => {
-          this.loading = false
-        })
+      this.FETCH_POSTS().finally(() => {
+        this.loading = false
+      })
     },
     prev() {
       this.page -= 1
     },
     next() {
       this.page += 1
-    },
-    onWritePost() {
-      this.fetchData()
     },
     onViewPost(pid) {
       this.postId = pid

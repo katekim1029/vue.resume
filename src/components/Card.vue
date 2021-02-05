@@ -1,35 +1,33 @@
 <template>
   <Modal class="modal-card">
     <div slot="body" class="card">
-      <div>
-        <div class="loading" v-if="loading">
-          <span class="loading__bar"></span>
-        </div>
-
-        <template v-else>
-          <button class="btn-modal" @click.prevent="close">&times;</button>
-          <div class="card__info">
-            <img :src="require(`@/assets/images/${ data.img }`)" class="card__img" width="400" height="400" alt="">
-            <div class="card__detail">
-              <h5 class="card__title">{{ data.title }}</h5>
-              <ul class="card__list">
-                <li class="card__item">CLIENT : {{ data. client }}</li>
-                <li class="card__item">PERIOD : {{ data. period }}</li>
-                <li class="card__item">SKILLS : {{ data. skills }}</li>
-                <li class="card__item" v-if="data.details">DETAILS : {{ data. details }}</li>
-                <li class="card__item" v-if="data.url">LINK : <a :href="data.url" class="card__link" target="_blank">{{ data.url }}</a></li>
-              </ul>
-            </div>
-          </div>
-        </template>
+      <div class="loading" v-if="loading">
+        <span class="loading__bar"></span>
       </div>
+
+      <template v-else>
+        <div class="card__info">
+          <img :src="require(`@/assets/images/${ data.img }`)" class="card__img" width="400" height="400" alt="">
+          <div class="card__detail">
+            <h5 class="card__title">{{ data.title }}</h5>
+            <ul class="card__list">
+              <li class="card__item">CLIENT : {{ data. client }}</li>
+              <li class="card__item">PERIOD : {{ data. period }}</li>
+              <li class="card__item">SKILLS : {{ data. skills }}</li>
+              <li class="card__item" v-if="data.details">DETAILS : {{ data. details }}</li>
+              <li class="card__item" v-if="data.url">LINK : <a :href="data.url" class="card__link" target="_blank">{{ data.url }}</a></li>
+            </ul>
+          </div>
+        </div>
+        <button class="btn-modal" @click.prevent="close">&times;</button>
+      </template>
     </div>
   </Modal>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Modal from '@/components/Modal.vue'
-import { board } from '@/api'
 
 export default {
   name: 'Card',
@@ -50,21 +48,20 @@ export default {
       immediate: true
     }
   },
+  computed: {
+    ...mapState([
+      'board'
+    ])
+  },
   methods: {
     fetchData() {
       this.bid = this.$route.params.bid
       this.cid = this.$route.params.cid
       this.loading = true
       setTimeout( () => {
-        board.fetch('experience')
-          .then(data => {
-            this.data = data.find( elem => elem.id === this.cid)
-            console.log(this.data)
-          })
-          .finally(() => {
-            this.loading = false
-          })
-        }, 500)
+          this.data = this.board.find( elem => elem.id === this.cid)
+          this.loading = false
+      }, 500)
     },
     close() {
       this.$router.push(`/b/${this.bid}`).catch(()=>{})
@@ -85,8 +82,11 @@ export default {
   text-align: center;
 
   &__info {
+    overflow: hidden;
     position: relative;
+    height: 100%;
     padding-left: 500px;
+    padding-right: 20px;
   }
 
   &__title {
@@ -106,6 +106,8 @@ export default {
     float: left;
     padding-top: 50px;
     text-align: left;
+    word-wrap: break-word;
+    word-break: break-word;
   }
 
   &__item {

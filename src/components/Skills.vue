@@ -76,8 +76,8 @@ export default {
   }
 
   &__box {
-    font-size: $font-size-xl;
-    line-height: 80px;
+    font-size: $font-size-lg;
+    line-height: 40px;
   }
 
   &__img {

@@ -28,21 +28,29 @@ export default {
   components: {
     Modal
   },
-  props: ['pid'],
+  props: [
+    'pid'
+  ],
   data() {
     return {
       loading: true,
     }
   },
   computed: {
-    ...mapState(['post'])
+    ...mapState([
+      'post'
+    ])
   },
   methods: {
-    ...mapMutations(['SET_IS_VIEW_POST']),
-    ...mapActions(['FETCH_VIEW_POST'])
+    ...mapMutations([
+      'SET_IS_VIEW_POST'
+    ]),
+    ...mapActions([
+      'FETCH_POST'
+    ])
   },
   created() {
-    this.FETCH_VIEW_POST(this.pid)
+    this.FETCH_POST(this.pid)
       .finally(() => {
         this.loading = false
       })

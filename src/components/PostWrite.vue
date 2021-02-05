@@ -52,12 +52,18 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['SET_IS_WRITE_POST']),
-    ...mapActions(['ADD_POST']),
+    ...mapMutations([
+      'SET_IS_WRITE_POST'
+    ]),
+    ...mapActions([
+      'ADD_POST',
+      'FETCH_POSTS'
+    ]),
     onSubmit() {
-      this.ADD_POST({title: this.input, body: this.textarea, userId: 1})
       this.SET_IS_WRITE_POST(false)
-      this.$emit('submit')
+      this.ADD_POST({title: this.input, body: this.textarea, userId: 1}).then(() => {
+        this.FETCH_POSTS()
+      })
     }
   }
 }

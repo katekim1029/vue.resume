@@ -8,7 +8,7 @@
       <h3 class="title">EXPERIENCE</h3>
       <div class="board">
         <ul class="board__list">
-          <li class="board__item" v-for="item in data" :key="item.id">
+          <li class="board__item" v-for="item in board" :key="item.id">
             <router-link class="board__link" :to="`/b/${bid}/c/${item.id}`">
               <img :src="require(`@/assets/images/${ item.img }`)" width="100" height="100" alt="">
             </router-link>
@@ -22,13 +22,12 @@
 </template>
 
 <script>
-import { board } from '@/api'
+import { mapState,  mapActions } from 'vuex'
 
 export default {
   name: 'Board',
   data() {
     return {
-      data: null,
       loading: false,
       bid: null,
     }
@@ -36,18 +35,22 @@ export default {
   created() {
     this.fetchData()
   },
+  computed: {
+    ...mapState([
+      'board'
+    ])
+  },
   methods: {
+    ...mapActions([
+      'FETCH_BOARD'
+    ]),
     fetchData() {
       this.loading = true
       this.bid = this.$route.params.bid
       setTimeout(() => {
-        board.fetch('experience')
-          .then(data => {
-            this.data = data.reverse()
-          })
-          .finally(() => {
-            this.loading = false
-          })
+        this.FETCH_BOARD().finally(() => {
+          this.loading = false
+        })
       }, 500)
     }
   }
