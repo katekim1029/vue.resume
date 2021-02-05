@@ -12,7 +12,6 @@ import Education from '@/components/Education.vue'
 
 import PostList from '@/components/PostList.vue'
 import PostView from '@/components/PostView.vue'
-import PostWrite from '@/components/PostWrite.vue'
 
 Vue.use(VueRouter)
 
@@ -29,8 +28,11 @@ const router = new VueRouter({
     // { path: '/', component: Home, beforeEnter: requireAuth },
     { path: '/', component: Home },
     { path: '/login', component: Login },
-    { path: '/b/:bid', component: Board, beforeEnter: requireAuth, children: [
-        { path: 'c/:cid', component: Card, beforeEnter: requireAuth }
+    // { path: '/b/:bid', component: Board, beforeEnter: requireAuth, children: [
+    //     { path: 'c/:cid', component: Card, beforeEnter: requireAuth }
+    //   ] },
+    { path: '/b/:bid', component: Board, children: [
+        { path: 'c/:cid', component: Card }
       ] },
     { path: '/info', component: Info },
     { path: '/skills', component: Skills },
@@ -38,7 +40,6 @@ const router = new VueRouter({
 
     { path: '/posts', component: PostList },
     { path: '/posts/:pid', component: PostView },
-    { path: '/write', component: PostWrite },
     { path: '*', component: NotFound }
   ]
 })

@@ -26,9 +26,9 @@
             <tr v-for="post in board" :key="post.id" >
               <td>{{ post.id }}</td>
               <td class="post-list__text">
-                <router-link class="post-list__link" :to="`/posts/${post.id}`">
+                <a href="#" class="post-list__link" @click.prevent="openViewModal(post.id)">
                   {{ post.title }}
-                </router-link>
+                </a>
               </td>
               <td>{{ post.userId }}</td>
             </tr>
@@ -40,17 +40,26 @@
           <strong>{{ page }}</strong> / {{ count }} 페이지
           <button type="button" :disabled="page === count" @click="next" class="post-list__btn">다음</button>
         </div>
-        <router-link class="btn-board" to="/write">글쓰기</router-link>
+        <button type="button" class="btn-board" @click="writeModal=true">글쓰기</button>
+
+        <PostView v-if="viewModal" :data="postData" @close="viewModal=false" />
+        <PostWrite v-if="writeModal" @close="writeModal=false" @submit="onWritePost" />
       </div>
     </template>
   </div>
 </template>
 
 <script>
+import PostView from '@/components/PostView.vue'
+import PostWrite from '@/components/PostWrite.vue'
 import { boardFake } from  '@/api'
 
 export default {
   name: 'PostList',
+  components: {
+    PostView,
+    PostWrite
+  },
   data() {
     return {
       loading: false,
@@ -58,6 +67,9 @@ export default {
       error: '',
       page: 1,
       size: 10,
+      viewModal: false,
+      writeModal: false,
+      postData: {},
     }
   },
   created() {
@@ -90,6 +102,23 @@ export default {
     },
     next() {
       this.page += 1
+    },
+    onWritePost(payload) {
+      boardFake.create(payload)
+        .then(() => {
+          this.fetchData()
+        })
+    },
+    openViewModal(id) {
+      this.loading = true
+      boardFake.fetch(id)
+        .then(data => {
+          this.postData = data
+        })
+        .finally(() => {
+          this.loading = false
+          this.viewModal = true
+        })
     }
   }
 }

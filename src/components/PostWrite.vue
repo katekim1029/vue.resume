@@ -1,29 +1,36 @@
 <template>
-  <div class="cont">
-    <h3 class="title">Fake Board</h3>
+  <Modal class="modal-write">
 
-    <form id="add-post-form" @submit.prevent="onSubmit">
-      <div class="post-write">
-        <label for="subject" class="post-write__lb">제목</label>
-        <input type="text" id="subject" class="post-write__inp" v-model="input" ref="input" placeholder="제목을 입력하세요">
-        <label for="detail" class="post-write__lb">내용</label>
-        <textarea id="detail" class="post-write__ta" v-model="textarea" placeholder="내용을 입력하세요"></textarea>
-      </div>
+    <div slot="body">
 
-      <div class="btnset">
-        <button type="button" class="btn-cancel" @click="cancel">취소</button>
-        <button type="submit" class="btn-board" :disabled="valid">등록</button>
-      </div>
-    </form>
+      <form id="add-post-form" @submit.prevent="onSubmit">
+        <div class="post-write">
+          <label for="subject" class="post-write__lb">제목</label>
+          <input type="text" id="subject" class="post-write__inp" v-model="input" ref="input" placeholder="제목을 입력하세요">
+          <label for="detail" class="post-write__lb">내용</label>
+          <textarea id="detail" class="post-write__ta" v-model="textarea" placeholder="내용을 입력하세요"></textarea>
+        </div>
 
-  </div>
+        <div class="btnset">
+          <button type="button" class="btn-cancel" @click="close">취소</button>
+          <button type="submit" class="btn-board" :disabled="valid">등록</button>
+        </div>
+      </form>
+
+      <button class="btn-modal" @click="close">&times;</button>
+    </div>
+
+  </Modal>
 </template>
 
 <script>
-import { boardFake } from  '@/api'
+import Modal from '@/components/Modal.vue'
 
 export default {
   name: 'PostWrite',
+  components: {
+    Modal
+  },
   data() {
     return {
       input: '',
@@ -31,7 +38,7 @@ export default {
     }
   },
   mounted() {
-    this.$refs.input.focus()
+    // this.$refs.input.focus()
   },
   // watch: {
   //   input(v) {
@@ -44,22 +51,36 @@ export default {
     }
   },
   methods: {
-    onSubmit() {
-      console.log('submit')
-      boardFake.create({title: this.input, body: this.textarea, userId: 1})
-        .then(() => {
-          alert('등록되었습니다')
-          this.$router.push('/posts').catch(()=>{})
-        })
+    close() {
+      this.$emit('close')
     },
-    cancel() {
-      this.$router.push('/posts').catch(()=>{})
+    onSubmit() {
+      this.$emit('close')
+      this.$emit('submit', {title: this.input, body: this.textarea, userId: 1})
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.modal-mask.modal-write {
+  transition: all 0s ease 0s;
+
+  .modal-container {
+    position: relative;
+    width: 800px;
+    padding: 100px 50px 50px;
+    font-family: $font-family-base;
+    transition: all 0s ease 0s;
+  }
+  .modal-body {
+    margin: 0;
+  }
+  .modal-header, .modal-footer {
+    display: none;
+  }
+}
+
 .post-write {
   width: 700px;
   margin: 0 auto;

@@ -1,57 +1,52 @@
 <template>
-  <div class="cont">
-    <div class="loading" v-if="loading">
-      <span class="loading__bar"></span>
-    </div>
-
-    <template v-else>
-      <h3 class="title">Fake Board</h3>
-
+  <Modal class="modal-view">
+    <div slot="body">
       <div class="post-view">
         <strong class="post-view__tit">{{ data.title }}</strong>
         <p class="post-view__cnt">{{ data.body }}</p>
       </div>
 
-      <router-link class="btn-board" to="/posts">목록</router-link>
-    </template>
-  </div>
+      <button class="btn-modal" @click="close">&times;</button>
+    </div>
+  </Modal>
 </template>
 
 <script>
-import { boardFake } from  '@/api'
+import Modal from '@/components/Modal.vue'
 
 export default {
   name: 'PostView',
-  data() {
-    return {
-      data: null,
-      loading: false,
-      pid: null,
-    }
+  components: {
+    Modal
   },
-  watch: {
-    '$route': {
-      handler: 'fetchData',
-      immediate: true
-    }
-  },
+  props: ['data'],
   methods: {
-    fetchData() {
-      this.loading = true
-      this.pid = this.$route.params.pid
-      boardFake.fetch(this.pid)
-        .then(data => {
-          this.data = data
-        })
-        .finally(() => {
-          this.loading = false
-        })
+    close() {
+      this.$emit('close')
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.modal-mask.modal-view {
+  transition: all 0s ease 0s;
+
+  .modal-container {
+    position: relative;
+    width: 800px;
+    padding: 100px 50px 50px;
+    font-family: $font-family-base;
+    transition: all 0s ease 0s;
+  }
+  .modal-body {
+    margin: 0;
+  }
+  .modal-header, .modal-footer {
+    display: none;
+  }
+}
+
 .post-view {
   width: 700px;
   margin: 0 auto;
