@@ -5,9 +5,9 @@
       <a href="#" class="navbar__link" @click.prevent="logout" v-if="isAuth">LOGOUT</a>
       <router-link class="navbar__link" to="/login" v-else>LOGIN</router-link>
     </div>
-<!--        <p class="navbar__text">-->
-<!--          Hello, <strong class="navbar__user"></strong>!-->
-<!--        </p>-->
+    <p class="navbar__text" v-if="isAuth">
+      Hello, <strong class="navbar__user">Visitor</strong>!
+    </p>
   </div>
 </template>
 
