@@ -7,6 +7,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     // fake board
+    token: null,
     isViewPost: false,
     isWritePost: false,
     post: {},
@@ -15,8 +16,23 @@ const store = new Vuex.Store({
     //resume
     board: []
   },
+  getters : {
+    // fake board
+    isAuth (state) {
+      return !!state.token
+    }
+  },
   mutations: {
     // fake board
+    LOGIN (state, token) {
+      if(!token) return;
+      state.token = token
+      localStorage.setItem('token', token)
+    },
+    LOGOUT (state) {
+      state.token = null
+      delete localStorage.token
+    },
     SET_IS_VIEW_POST (state, toggle) {
       state.isViewPost = toggle
     },
@@ -37,6 +53,12 @@ const store = new Vuex.Store({
   },
   actions: {
     // fake board
+    LOGIN({commit}, {email, password}) {
+      return api.authFake.login(email, password).then(data => {
+        console.log(data)
+        commit('LOGIN', data.token)
+      })
+    },
     ADD_POST (context, {title, body, userId}) {
       console.dir(context)
       return api.boardFake.create({title, body, userId})

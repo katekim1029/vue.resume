@@ -12,16 +12,21 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
+
 export default {
   name: 'FakeNavbar',
   computed: {
-    isAuth() {
-      return !!localStorage.getItem('token')
-    }
+    ...mapGetters([
+      'isAuth'
+    ]),
   },
   methods: {
+    ...mapMutations([
+      'LOGOUT'
+    ]),
     logout() {
-      delete localStorage.token
+      this.LOGOUT()
       this.$router.push('/login').catch(()=>{})
     }
   }

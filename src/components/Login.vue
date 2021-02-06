@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { authFake } from '@/api'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'Login',
@@ -44,10 +44,12 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      'LOGIN'
+    ]),
     onSubmit() {
-      authFake.login(this.email, this.password)
-        .then(data => {
-          localStorage.setItem('token', data.token)
+      this.LOGIN({email: this.email, password: this.password})
+        .then(() => {
           this.$router.push(this.rPath).catch(()=>{})
         })
         .catch(err => {

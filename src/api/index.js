@@ -4,7 +4,7 @@ import router from '@/router'
 const DOMAIN = process.env.BASE_URL
 const UNAUTHORIZED = 401
 const onUnauthorized = () => {
-  router.push('/login')
+  router.push('/login?rPath=${encodeURIComponent(location.pathname)}')
 }
 
 const request = (method, obj, data) => {
