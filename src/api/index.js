@@ -21,8 +21,8 @@ const request = (method, obj, data) => {
 }
 
 export const board = {
-  fetch(obj) {
-    return request('get', obj)
+  fetch(name) {
+    return request('get', name)
   }
 }
 

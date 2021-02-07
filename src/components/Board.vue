@@ -48,7 +48,7 @@ export default {
       this.loading = true
       this.bid = this.$route.params.bid
       setTimeout(() => {
-        this.FETCH_BOARD().finally(() => {
+        this.FETCH_BOARD({id: this.bid}).finally(() => {
           this.loading = false
         })
       }, 500)

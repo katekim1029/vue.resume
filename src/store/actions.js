@@ -2,7 +2,8 @@ import * as api from "@/api";
 
 const actions = {
   //resume
-  FETCH_BOARD({commit}) {
+  FETCH_BOARD({commit}, {id}) {
+    console.log('board id: ' + id)
     return api.board.fetch('experience').then(data => {
       commit('SET_BOARD', data.reverse())
     })

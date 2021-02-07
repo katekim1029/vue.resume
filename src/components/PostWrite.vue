@@ -13,7 +13,7 @@
 
         <div class="btnset">
           <button type="button" class="btn-cancel" @click="SET_IS_WRITE_POST(false)">취소</button>
-          <button type="submit" class="btn-board" :disabled="valid">등록</button>
+          <button type="submit" class="btn-board" :disabled="invalid">등록</button>
         </div>
       </form>
 
@@ -39,7 +39,7 @@ export default {
     }
   },
   mounted() {
-    // this.$refs.input.focus()
+    this.$refs.input.focus()
   },
   // watch: {
   //   input(v) {
@@ -47,8 +47,8 @@ export default {
   //   }
   // },
   computed: {
-    valid() {
-      return !this.input || !this.textarea
+    invalid() {
+      return !this.input.trim() || !this.textarea.trim()
     }
   },
   methods: {
