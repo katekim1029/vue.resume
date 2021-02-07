@@ -15,6 +15,7 @@
 
         <div class="btnset">
           <button type="submit" class="btn-board" @click="$emit('edit')">수정</button>
+          <button type="submit" class="btn-board" @click="onDelete" ref="btn">삭제</button>
         </div>
 
         <button class="btn-modal" @click="close">&times;</button>
@@ -40,6 +41,11 @@ export default {
       loading: true,
     }
   },
+  created() {
+    this.FETCH_POST(this.pid).finally(() => {
+      this.loading = false
+    })
+  },
   computed: {
     ...mapState([
       'post'
@@ -50,18 +56,24 @@ export default {
       'SET_IS_VIEW_POST'
     ]),
     ...mapActions([
-      'FETCH_POST'
+      'FETCH_POST',
+      'DELETE_POST'
     ]),
     close() {
       this.SET_IS_VIEW_POST(false)
-    }
-  },
-  created() {
-    this.FETCH_POST(this.pid)
-      .finally(() => {
-        this.loading = false
+    },
+    onDelete() {
+      if(!window.confirm('삭제하시겠습니까?')) {
+        this.$refs.btn.blur()
+        return
+      }
+      this.DELETE_POST(this.pid).then(() => {
+        alert('삭제되었습니다')
+        this.close()
+        this.$emit('delete')
       })
-  },
+    }
+  }
 }
 </script>
 

@@ -42,8 +42,8 @@
         </div>
         <button type="button" class="btn-board" @click="onClickWrite">글쓰기</button>
 
-        <PostView v-if="isViewPost" :pid="postId" @edit="onEditPost" />
-        <PostWrite v-if="isWritePost" :type="writeType" :pid="postId" @submit="onWritePost" />
+        <PostView v-if="isViewPost" :pid="postId" @edit="onEdit" @delete="onDelete" />
+        <PostWrite v-if="isWritePost" :type="writeType" :pid="postId" @submit="onWrite" />
       </div>
     </template>
   </div>
@@ -117,15 +117,18 @@ export default {
       this.SET_IS_WRITE_POST(true)
       this.writeType = 'write'
     },
-    onWritePost() {
+    onWrite() {
       if(this.writeType === 'write') {
         this.page = 1
       }
     },
-    onEditPost() {
+    onEdit() {
       this.SET_IS_VIEW_POST(false)
       this.SET_IS_WRITE_POST(true)
       this.writeType = 'edit'
+    },
+    onDelete() {
+      this.page = 1
     }
   }
 }

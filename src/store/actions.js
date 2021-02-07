@@ -42,6 +42,11 @@ const actions = {
         dispatch('FETCH_POST', id)
         return data
       })
+  },
+  DELETE_POST({dispatch}, id) {
+    return api.boardFake.destroy(id).then(() => {
+      dispatch('FETCH_POSTS')
+    })
   }
 }
 

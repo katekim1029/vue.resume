@@ -51,6 +51,10 @@ export const boardFake = {
   update(id, payload) {
     const url = `https://jsonplaceholder.typicode.com/posts/${id}`
     return requestFake('put', url, payload)
+  },
+  destroy(id) {
+    const url = `https://jsonplaceholder.typicode.com/posts/${id}`
+    return requestFake('delete', url)
   }
 }
 
