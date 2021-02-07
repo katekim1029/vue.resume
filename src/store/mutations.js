@@ -3,6 +3,9 @@ const mutations = {
   SET_BOARD (state, data) {
     state.board = data
   },
+  SET_CARD (state, { id, data}) {
+    state.card = data.find(elem => elem.id === id)
+  },
 
   // fake board
   LOGIN (state, token) {

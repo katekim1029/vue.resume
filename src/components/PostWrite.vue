@@ -1,5 +1,5 @@
 <template>
-  <Modal class="modal-write" @close="close">
+  <Modal class="modal-write" @close="close" name="write">
 
     <div slot="body">
 

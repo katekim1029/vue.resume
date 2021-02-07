@@ -7,7 +7,8 @@ const state = {
   isViewPost: false,
   isWritePost: false,
   post: {},
-  posts: []
+  posts: [],
+  card: {}
 }
 
 export default state

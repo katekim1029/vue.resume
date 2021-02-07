@@ -8,6 +8,11 @@ const actions = {
       commit('SET_BOARD', data.reverse())
     })
   },
+  FETCH_CARD({commit}, id) {
+    return api.board.fetch('experience').then(data => {
+      commit('SET_CARD', {id, data})
+    })
+  },
 
   // fake board
   LOGIN({commit}, {email, password}) {

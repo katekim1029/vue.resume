@@ -1,5 +1,5 @@
 <template>
-  <Modal class="modal-card" @close="close">
+  <Modal class="modal-card" @close="close" name="card">
     <div slot="body" class="card">
       <div class="loading" v-if="loading">
         <span class="loading__bar"></span>
@@ -7,15 +7,15 @@
 
       <template v-else>
         <div class="card__info">
-          <img :src="require(`@/assets/images/${ data.img }`)" class="card__img" width="400" height="400" alt="">
+          <img :src="require(`@/assets/images/${ card.img }`)" class="card__img" width="400" height="400" alt="">
           <div class="card__detail">
-            <h5 class="card__title">{{ data.title }}</h5>
+            <h5 class="card__title">{{ card.title }}</h5>
             <ul class="card__list">
-              <li class="card__item">CLIENT : {{ data. client }}</li>
-              <li class="card__item">PERIOD : {{ data. period }}</li>
-              <li class="card__item">SKILLS : {{ data. skills }}</li>
-              <li class="card__item" v-if="data.details">DETAILS : {{ data. details }}</li>
-              <li class="card__item" v-if="data.url">LINK : <a :href="data.url" class="card__link" target="_blank">{{ data.url }}</a></li>
+              <li class="card__item">CLIENT : {{ card.client }}</li>
+              <li class="card__item">PERIOD : {{ card.period }}</li>
+              <li class="card__item">SKILLS : {{ card.skills }}</li>
+              <li class="card__item" v-if="card.details">DETAILS : {{ card.details }}</li>
+              <li class="card__item" v-if="card.url">LINK : <a :href="card.url" class="card__link" target="_blank">{{ card.url }}</a></li>
             </ul>
           </div>
         </div>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import Modal from '@/components/Modal.vue'
 
 export default {
@@ -36,31 +36,31 @@ export default {
   },
   data() {
     return {
-      data: null,
       loading: false,
       bid: null,
       cid: null,
     }
   },
-  watch: {
-    '$route': {
-      handler: 'fetchData',
-      immediate: true
-    }
+  created() {
+    this.fetchData()
   },
   computed: {
     ...mapState([
-      'board'
+      'card'
     ])
   },
   methods: {
+    ...mapActions([
+      'FETCH_CARD'
+    ]),
     fetchData() {
       this.bid = this.$route.params.bid
       this.cid = this.$route.params.cid
       this.loading = true
       setTimeout( () => {
-          this.data = this.board.find( elem => elem.id === this.cid)
-          this.loading = false
+          this.FETCH_CARD(this.cid).finally(() => {
+            this.loading = false
+          })
       }, 500)
     },
     close() {

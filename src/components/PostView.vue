@@ -1,5 +1,5 @@
 <template>
-  <Modal class="modal-view" :class="{ 'is-loading': loading }" @close="close">
+  <Modal class="modal-view" :class="{ 'is-loading': loading }" @close="close"  name="view">
 
     <div slot="body">
 

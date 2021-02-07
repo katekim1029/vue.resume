@@ -33,12 +33,14 @@
 <script>
 export default {
   name: 'Modal',
+  props: ['name'],
   data() {
     return {
       elem: null
     }
   },
   mounted() {
+    console.log(this.name)
     this.elem = this.$refs.modalCont
     document.querySelector('body').addEventListener('click', this.setupClickOutside)
   },
