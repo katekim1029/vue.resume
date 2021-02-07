@@ -1,5 +1,5 @@
 <template>
-  <Modal class="modal-card">
+  <Modal class="modal-card" @close="close">
     <div slot="body" class="card">
       <div class="loading" v-if="loading">
         <span class="loading__bar"></span>
@@ -64,6 +64,7 @@ export default {
       }, 500)
     },
     close() {
+      console.log('close')
       this.$router.push(`/b/${this.bid}`).catch(()=>{})
     },
   }

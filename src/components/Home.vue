@@ -31,8 +31,6 @@ export default {
     }
   },
   created() {
-    console.log("url: " + process.env.BASE_URL)
-    console.log(this.$route)
     this.fetchData()
   },
   methods: {

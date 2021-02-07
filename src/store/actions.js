@@ -12,13 +12,14 @@ const actions = {
   // fake board
   LOGIN({commit}, {email, password}) {
     return api.authFake.login(email, password).then(data => {
-      console.log(data)
       commit('LOGIN', data.token)
     })
   },
-  ADD_POST (context, {title, body, userId}) {
-    console.dir(context)
-    return api.boardFake.create({title, body, userId})
+  ADD_POST ({dispatch}, {title, body, userId}) {
+    return api.boardFake.create({title, body, userId}).then(({id}) => {
+      console.log('response id :' + id)
+      dispatch('FETCH_POSTS')
+    })
   },
   FETCH_POST({commit}, id) {
     return api.boardFake.fetch(id).then(data => {

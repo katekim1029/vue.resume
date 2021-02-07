@@ -1,5 +1,5 @@
 <template>
-  <Modal class="modal-view" :class="{ 'is-loading': loading }">
+  <Modal class="modal-view" :class="{ 'is-loading': loading }" @close="close">
 
     <div slot="body">
 
@@ -13,7 +13,7 @@
           <p class="post-view__cnt">{{ post.body }}</p>
         </div>
 
-        <button class="btn-modal" @click="SET_IS_VIEW_POST(false)">&times;</button>
+        <button class="btn-modal" @click="close">&times;</button>
       </template>
     </div>
   </Modal>
@@ -47,7 +47,10 @@ export default {
     ]),
     ...mapActions([
       'FETCH_POST'
-    ])
+    ]),
+    close() {
+      this.SET_IS_VIEW_POST(false)
+    }
   },
   created() {
     this.FETCH_POST(this.pid)

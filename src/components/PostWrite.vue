@@ -1,5 +1,5 @@
 <template>
-  <Modal class="modal-write">
+  <Modal class="modal-write" @close="close">
 
     <div slot="body">
 
@@ -12,12 +12,12 @@
         </div>
 
         <div class="btnset">
-          <button type="button" class="btn-cancel" @click="SET_IS_WRITE_POST(false)">취소</button>
+          <button type="button" class="btn-cancel" @click="close">취소</button>
           <button type="submit" class="btn-board" :disabled="invalid">등록</button>
         </div>
       </form>
 
-      <button class="btn-modal" @click="SET_IS_WRITE_POST(false)">&times;</button>
+      <button class="btn-modal" @click="close">&times;</button>
     </div>
 
   </Modal>
@@ -60,12 +60,15 @@ export default {
       'FETCH_POSTS'
     ]),
     onSubmit() {
+      if(this.invalid) return
       this.ADD_POST({title: this.input, body: this.textarea, userId: 1}).then(() => {
         alert('등록되었습니다!')
-        this.FETCH_POSTS()
         this.SET_IS_WRITE_POST(false)
         this.$emit('submit')
       })
+    },
+    close() {
+      this.SET_IS_WRITE_POST(false)
     }
   }
 }

@@ -2,7 +2,7 @@
   <transition name="modal">
     <div class="modal-mask">
       <div class="modal-wrapper">
-        <div class="modal-container">
+        <div class="modal-container" ref="modalCont">
 
           <div class="modal-header">
             <slot name="header">
@@ -32,7 +32,28 @@
 
 <script>
 export default {
-  name: 'Modal'
+  name: 'Modal',
+  data() {
+    return {
+      elem: null
+    }
+  },
+  mounted() {
+    this.elem = this.$refs.modalCont
+    document.querySelector('body').addEventListener('click', this.setupClickOutside)
+  },
+  beforeDestroy() {
+    document.querySelector('body').removeEventListener('click', this.setupClickOutside)
+  },
+  methods: {
+    setupClickOutside() {
+      document.querySelector('body').addEventListener('click', e => {
+        console.log('e: ' + e)
+        if(!this.elem.contains(e.target))
+          this.$emit('close')
+      })
+    }
+  }
 }
 </script>
 
