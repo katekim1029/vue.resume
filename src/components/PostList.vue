@@ -26,7 +26,7 @@
             <tr v-for="item in board" :key="item.id" >
               <td>{{ item.id }}</td>
               <td class="post-list__text">
-                <a href="#" class="post-list__link" @click.prevent="onViewPost(item.id)">
+                <a href="#" class="post-list__link" @click.prevent="onClickView(item.id)">
                   {{ item.title }}
                 </a>
               </td>
@@ -40,10 +40,10 @@
           <strong>{{ page }}</strong> / {{ count }} 페이지
           <button type="button" :disabled="page === count" @click="next" class="post-list__btn">다음</button>
         </div>
-        <button type="button" class="btn-board" @click="SET_IS_WRITE_POST(true)">글쓰기</button>
+        <button type="button" class="btn-board" @click="onClickWrite">글쓰기</button>
 
-        <PostView v-if="isViewPost" :pid="postId" />
-        <PostWrite v-if="isWritePost" @submit="onWritePost" />
+        <PostView v-if="isViewPost" :pid="postId" @edit="onEditPost" />
+        <PostWrite v-if="isWritePost" :type="writeType" :pid="postId" @submit="onWritePost" />
       </div>
     </template>
   </div>
@@ -67,6 +67,7 @@ export default {
       page: 1,
       size: 10,
       postId: null,
+      writeType: 'write'
     }
   },
   created() {
@@ -108,12 +109,23 @@ export default {
     next() {
       this.page += 1
     },
-    onViewPost(pid) {
+    onClickView(pid) {
       this.postId = pid
       this.SET_IS_VIEW_POST(true)
     },
+    onClickWrite() {
+      this.SET_IS_WRITE_POST(true)
+      this.writeType = 'write'
+    },
     onWritePost() {
-      this.page = 1
+      if(this.writeType === 'write') {
+        this.page = 1
+      }
+    },
+    onEditPost() {
+      this.SET_IS_VIEW_POST(false)
+      this.SET_IS_WRITE_POST(true)
+      this.writeType = 'edit'
     }
   }
 }

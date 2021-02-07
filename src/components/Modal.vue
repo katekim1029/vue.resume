@@ -50,7 +50,6 @@ export default {
   methods: {
     setupClickOutside() {
       document.querySelector('body').addEventListener('click', e => {
-        console.log('e: ' + e)
         if(!this.elem.contains(e.target))
           this.$emit('close')
       })

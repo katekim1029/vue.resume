@@ -13,6 +13,10 @@
           <p class="post-view__cnt">{{ post.body }}</p>
         </div>
 
+        <div class="btnset">
+          <button type="submit" class="btn-board" @click="$emit('edit')">수정</button>
+        </div>
+
         <button class="btn-modal" @click="close">&times;</button>
       </template>
     </div>

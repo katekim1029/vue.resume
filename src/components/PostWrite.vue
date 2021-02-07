@@ -13,7 +13,7 @@
 
         <div class="btnset">
           <button type="button" class="btn-cancel" @click="close">취소</button>
-          <button type="submit" class="btn-board" :disabled="invalid">등록</button>
+          <button type="submit" class="btn-board" :disabled="invalid">{{ this.type === 'write' ? '등록' : '수정' }}</button>
         </div>
       </form>
 
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { mapMutations, mapActions } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 import Modal from '@/components/Modal.vue'
 
 export default {
@@ -32,10 +32,19 @@ export default {
   components: {
     Modal
   },
+  props: [
+    'type',
+    'pid'
+  ],
   data() {
     return {
       input: '',
       textarea: ''
+    }
+  },
+  created() {
+    if(this.type === 'edit') {
+      this.fetchPost()
     }
   },
   mounted() {
@@ -47,6 +56,9 @@ export default {
   //   }
   // },
   computed: {
+    ...mapState([
+      'post'
+    ]),
     invalid() {
       return !this.input.trim() || !this.textarea.trim()
     }
@@ -57,15 +69,31 @@ export default {
     ]),
     ...mapActions([
       'ADD_POST',
-      'FETCH_POSTS'
+      'FETCH_POST',
+      'UPDATE_POST'
     ]),
     onSubmit() {
       if(this.invalid) return
-      this.ADD_POST({title: this.input, body: this.textarea, userId: 1}).then(() => {
-        alert('등록되었습니다!')
-        this.SET_IS_WRITE_POST(false)
-        this.$emit('submit')
-      })
+      if(this.type === 'edit') {
+        this.UPDATE_POST({id: this.post.id, title: this.input, body: this.textarea, userId: this.post.userId})
+          .then(data => {
+            console.log(data)
+            alert(`id: ${data.id}`)
+            this.SET_IS_WRITE_POST(false)
+            this.$emit('submit')
+          })
+      } else {
+        this.ADD_POST({title: this.input, body: this.textarea, userId: 1}).then((data) => {
+          alert(`id: ${data.id}`)
+          this.SET_IS_WRITE_POST(false)
+          this.$emit('submit')
+        })
+      }
+    },
+    fetchPost() {
+      this.FETCH_POST(this.pid)
+      this.input = this.post.title
+      this.textarea = this.post.body
     },
     close() {
       this.SET_IS_WRITE_POST(false)

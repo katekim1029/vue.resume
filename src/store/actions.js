@@ -21,9 +21,9 @@ const actions = {
     })
   },
   ADD_POST ({dispatch}, {title, body, userId}) {
-    return api.boardFake.create({title, body, userId}).then(({id}) => {
-      console.log('response id :' + id)
+    return api.boardFake.create({title, body, userId}).then(data => {
       dispatch('FETCH_POSTS')
+      return data
     })
   },
   FETCH_POST({commit}, id) {
@@ -35,6 +35,13 @@ const actions = {
     return api.boardFake.fetch().then(data => {
       commit('SET_POSTS', data)
     })
+  },
+  UPDATE_POST({dispatch}, {id, title, body, userId}) {
+    return api.boardFake.update(id, {id, title, body, userId})
+      .then(data => {
+        dispatch('FETCH_POST', id)
+        return data
+      })
   }
 }
 
