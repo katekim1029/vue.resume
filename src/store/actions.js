@@ -39,7 +39,7 @@ const actions = {
   UPDATE_POST({dispatch}, {id, title, body, userId}) {
     return api.boardFake.update(id, {id, title, body, userId})
       .then(data => {
-        dispatch('FETCH_POST', id)
+        dispatch('FETCH_POSTS', id)
         return data
       })
   },
